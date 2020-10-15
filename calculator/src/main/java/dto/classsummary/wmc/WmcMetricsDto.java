@@ -37,4 +37,13 @@ public class WmcMetricsDto {
     public void setNumberOfMethods(NumberOfMethodsDto numberOfMethods) {
         this.numberOfMethods = numberOfMethods;
     }
+
+    @Override
+    public String toString() {
+        return "WmcMetricsDto{" +
+                "value=" + value +
+                ", numberOfConstructors=" + numberOfConstructors +
+                ", numberOfMethods=" + numberOfMethods +
+                '}';
+    }
 }

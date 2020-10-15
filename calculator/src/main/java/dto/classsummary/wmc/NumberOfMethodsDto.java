@@ -57,4 +57,15 @@ public class NumberOfMethodsDto {
     public void setTotalStaticMethods(int totalStaticMethods) {
         this.totalStaticMethods = totalStaticMethods;
     }
+
+    @Override
+    public String toString() {
+        return "NumberOfMethodsDto{" +
+                "totalNumberOfMethods=" + totalNumberOfMethods +
+                ", totalPrivateMethods=" + totalPrivateMethods +
+                ", totalProtectedMethods=" + totalProtectedMethods +
+                ", totalPublicMethods=" + totalPublicMethods +
+                ", totalStaticMethods=" + totalStaticMethods +
+                '}';
+    }
 }

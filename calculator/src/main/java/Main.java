@@ -1,18 +1,16 @@
 import dit.DitCalculator;
 import dit.DitCalculatorImpl;
 import dto.classsummary.dit.DitMetricsDto;
+import dto.classsummary.wmc.WmcMetricsDto;
+import wmc.WmcCalculator;
+import wmc.WmcCalculatorImpl;
 
 public class Main {
     public static void main(String[] args) {
-//        IWmcCalculator wmcCalculator = new WmcCalculator();
-        DitCalculator ditCalcuator = new DitCalculatorImpl();
-//        Class testClass = getClass("inlincompiler.InlineCompiler");
-        Class grandChildClass = getClass("testclasses.GrandChildOne");
-//        double wmc = wmcCalculator.calculateMetric(testClass);
-        DitMetricsDto ditMetricsDto = ditCalcuator.calculate(grandChildClass);
-//        System.out.println("Wmc: " + wmc);
-        System.out.println("Dit of grandChild: " + ditMetricsDto.getAncestors().toString());
-        System.out.println("Dit of grandChild: " + ditMetricsDto.getValue());
+        WmcCalculator wmcCalculator = new WmcCalculatorImpl();
+        WmcMetricsDto wmcMetricsDto = wmcCalculator.calculate(WmcCalculatorImpl.class);
+        System.out.println("Wmc metrics:");
+        System.out.println(wmcMetricsDto);
     }
 
     public static Class getClass(String className) {

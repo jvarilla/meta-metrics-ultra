@@ -29,4 +29,12 @@ public class DitMetricsDto {
     public void setAncestors(List<String> ancestors) {
         this.ancestors = ancestors;
     }
+
+    @Override
+    public String toString() {
+        return "DitMetricsDto{" +
+                "value=" + value +
+                ", ancestors=" + ancestors +
+                '}';
+    }
 }
