@@ -3,8 +3,11 @@ package classloading;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.reflect.ClassPath;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import dit.DitCalculator;
 import dit.DitCalculatorImpl;
+import dto.classsummary.ClassSummaryDto;
 import dto.classsummary.dit.DitMetricsDto;
 import dto.classsummary.interfaces.InterfacesMetricsDto;
 import dto.classsummary.numfields.NumFieldsDto;
@@ -36,6 +39,10 @@ public class ClassManager {
 
         ImmutableSet<ClassPath.ClassInfo> classInfos = ClassPath.from(classLoader).getAllClasses();
 
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.setPrettyPrinting();
+        Gson gson = gsonBuilder.create();
+
         WmcCalculator wmcCalculator = new WmcCalculatorImpl();
         DitCalculator ditCalculator = new DitCalculatorImpl();
         InterfacesCalculator interfacesCalculator = new InterfacesCalculatorImpl();
@@ -52,12 +59,20 @@ public class ClassManager {
                         InterfacesMetricsDto interfacesMetricsDto = interfacesCalculator.calculate(theClass);
                         NumFieldsDto numFieldsDto = numFieldsCalculator.calculate(theClass);
 
-                        System.out.println(theClass.getName());
-                        System.out.println(wmcMetricsDto);
-                        System.out.println(ditMetricsDto);
-                        System.out.println(interfacesMetricsDto);
-                        System.out.println(numFieldsDto);
+//                        System.out.println(theClass.getName());
+//                        System.out.println(wmcMetricsDto);
+//                        System.out.println(ditMetricsDto);
+//                        System.out.println(interfacesMetricsDto);
+//                        System.out.println(numFieldsDto);
 
+                        ClassSummaryDto classSummaryDto = new ClassSummaryDto();
+                        classSummaryDto.setClassName(theClass.getName());
+                        classSummaryDto.setDit(ditMetricsDto);
+                        classSummaryDto.setWmc(wmcMetricsDto);
+                        classSummaryDto.setInterfaces(interfacesMetricsDto);
+                        classSummaryDto.setNumFields(numFieldsDto);
+
+                        System.out.println(gson.toJson(classSummaryDto, ClassSummaryDto.class));
                     } catch (Exception e) {
                         return;
                     }

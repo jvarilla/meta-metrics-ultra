@@ -2,6 +2,7 @@ package dto.classsummary;
 
 import dto.classsummary.dit.DitMetricsDto;
 import dto.classsummary.interfaces.InterfacesMetricsDto;
+import dto.classsummary.numfields.NumFieldsDto;
 import dto.classsummary.rfc.RfcMetricsDto;
 import dto.classsummary.wmc.NumberOfMethodsDto;
 import dto.classsummary.wmc.WmcMetricsDto;
@@ -10,12 +11,12 @@ public class ClassSummaryDto {
     private String className;
     private DitMetricsDto dit;
     private WmcMetricsDto wmc;
-    private NumberOfMethodsDto numFields;
+    private NumFieldsDto numFields;
     private RfcMetricsDto rfc;
     private InterfacesMetricsDto interfaces;
 
     public ClassSummaryDto(String className, DitMetricsDto dit, WmcMetricsDto wmc,
-                           NumberOfMethodsDto numFields, RfcMetricsDto rfc, InterfacesMetricsDto interfaces) {
+                           NumFieldsDto numFields, RfcMetricsDto rfc, InterfacesMetricsDto interfaces) {
         this.className = className;
         this.dit = dit;
         this.wmc = wmc;
@@ -51,11 +52,11 @@ public class ClassSummaryDto {
         this.wmc = wmc;
     }
 
-    public NumberOfMethodsDto getNumFields() {
+    public NumFieldsDto getNumFields() {
         return numFields;
     }
 
-    public void setNumFields(NumberOfMethodsDto numFields) {
+    public void setNumFields(NumFieldsDto numFields) {
         this.numFields = numFields;
     }
 
