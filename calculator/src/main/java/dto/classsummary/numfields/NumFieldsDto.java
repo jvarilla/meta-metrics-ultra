@@ -57,4 +57,15 @@ public class NumFieldsDto {
     public void setTotalStaticFields(int totalStaticFields) {
         this.totalStaticFields = totalStaticFields;
     }
+
+    @Override
+    public String toString() {
+        return "NumFieldsDto{" +
+                "totalNumberOfFields=" + totalNumberOfFields +
+                ", totalPrivateFields=" + totalPrivateFields +
+                ", totalProtectedFields=" + totalProtectedFields +
+                ", totalPublicFields=" + totalPublicFields +
+                ", totalStaticFields=" + totalStaticFields +
+                '}';
+    }
 }

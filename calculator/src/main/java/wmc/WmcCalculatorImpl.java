@@ -24,10 +24,6 @@ public class WmcCalculatorImpl implements WmcCalculator {
     public WmcMetricsDto calculate(Class classToAnalyze) {
         WmcMetricsDto results = new WmcMetricsDto();
 
-        for (Method method : getEligibleMethods(classToAnalyze)) {
-            System.out.println(method.getName());
-        }
-
         results.setValue(getEligibleMethods(classToAnalyze).length + classToAnalyze.getConstructors().length);
         results.setNumberOfConstructors(classToAnalyze.getConstructors().length);
         results.setNumberOfMethods(calculateMethodsMetrics(classToAnalyze));
@@ -35,7 +31,7 @@ public class WmcCalculatorImpl implements WmcCalculator {
         return results;
     }
 
-    private NumberOfMethodsDto calculateMethodsMetrics(Class classToAnalyze) {
+   public NumberOfMethodsDto calculateMethodsMetrics(Class classToAnalyze) {
         NumberOfMethodsDto numberOfMethodsDto = new NumberOfMethodsDto();
         numberOfMethodsDto.setTotalNumberOfMethods(getEligibleMethods(classToAnalyze).length);
 
@@ -55,12 +51,12 @@ public class WmcCalculatorImpl implements WmcCalculator {
 
     }
 
-    private int countNumMethodsWithCondition(Class theClass, Predicate<Method> condition) {
+    public int countNumMethodsWithCondition(Class theClass, Predicate<Method> condition) {
         return Arrays.stream(getEligibleMethods(theClass))
                 .filter(condition).toArray().length;
     }
 
-    private Method[] getEligibleMethods(Class theClass) {
+    public Method[] getEligibleMethods(Class theClass) {
         Predicate<Method> noLambdasFilter = method -> !method.getName().contains("lambda");
         return Arrays.stream(theClass.getDeclaredMethods()).filter(noLambdasFilter).toArray(Method[]::new);
     }

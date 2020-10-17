@@ -1,4 +1,8 @@
 package classloading;
 
-public class Runner {
+public class Runner extends Thread {
+    @Override
+    public void run() {
+        super.run();
+    }
 }
