@@ -7,9 +7,12 @@ import dit.DitCalculator;
 import dit.DitCalculatorImpl;
 import dto.classsummary.dit.DitMetricsDto;
 import dto.classsummary.interfaces.InterfacesMetricsDto;
+import dto.classsummary.numfields.NumFieldsDto;
 import dto.classsummary.wmc.WmcMetricsDto;
 import interfaces.InterfacesCalculator;
 import interfaces.InterfacesCalculatorImpl;
+import numfields.NumFieldsCalculator;
+import numfields.NumFieldsCalculatorImpl;
 import wmc.WmcCalculator;
 import wmc.WmcCalculatorImpl;
 
@@ -36,6 +39,8 @@ public class ClassManager {
         WmcCalculator wmcCalculator = new WmcCalculatorImpl();
         DitCalculator ditCalculator = new DitCalculatorImpl();
         InterfacesCalculator interfacesCalculator = new InterfacesCalculatorImpl();
+        NumFieldsCalculator numFieldsCalculator = new NumFieldsCalculatorImpl();
+
         List<ClassPath.ClassInfo> classInfoList = classInfos.asList();
 
         classInfoList.stream().filter(classInfo -> !classesOfThisProject.contains(classInfo)).forEach(
@@ -45,10 +50,14 @@ public class ClassManager {
                         WmcMetricsDto wmcMetricsDto = wmcCalculator.calculate(theClass);
                         DitMetricsDto ditMetricsDto = ditCalculator.calculate(theClass);
                         InterfacesMetricsDto interfacesMetricsDto = interfacesCalculator.calculate(theClass);
+                        NumFieldsDto numFieldsDto = numFieldsCalculator.calculate(theClass);
+
                         System.out.println(theClass.getName());
                         System.out.println(wmcMetricsDto);
                         System.out.println(ditMetricsDto);
                         System.out.println(interfacesMetricsDto);
+                        System.out.println(numFieldsDto);
+
                     } catch (Exception e) {
                         return;
                     }
