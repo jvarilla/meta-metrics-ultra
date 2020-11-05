@@ -1,11 +1,10 @@
 package classpathmanageradapter;
 
-import classloading.ClassManager;
+
 import com.google.common.collect.ImmutableSet;
 import com.google.common.reflect.ClassPath;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
@@ -25,10 +24,10 @@ public class ClassPathManagerAdapterImpl implements ClassPathManagerAdapter {
         try {
 //            File file = new File("C:\\Users\\jvari\\ProjectsJ\\SE433\\poc\\build\\classes\\java\\main");
             this.classesOfThisProject =
-                    ClassPath.from(ClassManager.class.getClassLoader()).getAllClasses();
+                    ClassPath.from(getClass().getClassLoader()).getAllClasses();
             File binDirectory = new File(pathToBinFolder);
             ClassLoader classLoader = new URLClassLoader(new URL[] {binDirectory .toURI().toURL()});
-            ClassManager.class.getClassLoader();
+            getClass().getClassLoader();
             ImmutableSet<ClassPath.ClassInfo> classInfos = ClassPath.from(classLoader).getAllClasses();
             List<ClassPath.ClassInfo> classInfoList = classInfos.asList();
 

@@ -1,4 +1,4 @@
-package dto.classsummary;
+package dto;
 
 import dit.DitMetricsDto;
 import interfaces.InterfacesMetricsDto;
@@ -13,16 +13,6 @@ public class ClassSummaryDto {
     private NumFieldsDto numFields;
     private RfcMetricsDto rfc;
     private InterfacesMetricsDto interfaces;
-
-    public ClassSummaryDto(String className, DitMetricsDto dit, WmcMetricsDto wmc,
-                           NumFieldsDto numFields, RfcMetricsDto rfc, InterfacesMetricsDto interfaces) {
-        this.className = className;
-        this.dit = dit;
-        this.wmc = wmc;
-        this.numFields = numFields;
-        this.rfc = rfc;
-        this.interfaces = interfaces;
-    }
 
     public ClassSummaryDto() {
     }

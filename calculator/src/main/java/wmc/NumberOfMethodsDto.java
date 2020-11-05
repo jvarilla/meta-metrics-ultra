@@ -1,71 +1,71 @@
 package wmc;
 
 public class NumberOfMethodsDto {
-    private int totalNumberOfMethods;
-    private int totalPrivateMethods;
-    private int totalProtectedMethods;
-    private int totalPublicMethods;
-    private int totalStaticMethods;
+    private int totalMethods;
+    private int privateMethods;
+    private int protectedMethods;
+    private int publicMethods;
+    private int staticMethods;
 
-    public NumberOfMethodsDto(int totalNumberOfMethods, int totalPrivateMethods, int totalProtectedMethods, int totalPublicMethods, int totalStaticMethods) {
-        this.totalNumberOfMethods = totalNumberOfMethods;
-        this.totalPrivateMethods = totalPrivateMethods;
-        this.totalProtectedMethods = totalProtectedMethods;
-        this.totalPublicMethods = totalPublicMethods;
-        this.totalStaticMethods = totalStaticMethods;
+    public NumberOfMethodsDto(int totalMethods, int privateMethods, int protectedMethods, int publicMethods, int staticMethods) {
+        this.totalMethods = totalMethods;
+        this.privateMethods = privateMethods;
+        this.protectedMethods = protectedMethods;
+        this.publicMethods = publicMethods;
+        this.staticMethods = staticMethods;
     }
 
     public NumberOfMethodsDto() {
     }
 
-    public int getTotalNumberOfMethods() {
-        return totalNumberOfMethods;
+    public int getTotalMethods() {
+        return totalMethods;
     }
 
-    public void setTotalNumberOfMethods(int totalNumberOfMethods) {
-        this.totalNumberOfMethods = totalNumberOfMethods;
+    public void setTotalMethods(int totalMethods) {
+        this.totalMethods = totalMethods;
     }
 
-    public int getTotalPrivateMethods() {
-        return totalPrivateMethods;
+    public int getPrivateMethods() {
+        return privateMethods;
     }
 
-    public void setTotalPrivateMethods(int totalPrivateMethods) {
-        this.totalPrivateMethods = totalPrivateMethods;
+    public void setPrivateMethods(int privateMethods) {
+        this.privateMethods = privateMethods;
     }
 
-    public int getTotalProtectedMethods() {
-        return totalProtectedMethods;
+    public int getProtectedMethods() {
+        return protectedMethods;
     }
 
-    public void setTotalProtectedMethods(int totalProtectedMethods) {
-        this.totalProtectedMethods = totalProtectedMethods;
+    public void setProtectedMethods(int protectedMethods) {
+        this.protectedMethods = protectedMethods;
     }
 
-    public int getTotalPublicMethods() {
-        return totalPublicMethods;
+    public int getPublicMethods() {
+        return publicMethods;
     }
 
-    public void setTotalPublicMethods(int totalPublicMethods) {
-        this.totalPublicMethods = totalPublicMethods;
+    public void setPublicMethods(int publicMethods) {
+        this.publicMethods = publicMethods;
     }
 
-    public int getTotalStaticMethods() {
-        return totalStaticMethods;
+    public int getStaticMethods() {
+        return staticMethods;
     }
 
-    public void setTotalStaticMethods(int totalStaticMethods) {
-        this.totalStaticMethods = totalStaticMethods;
+    public void setStaticMethods(int staticMethods) {
+        this.staticMethods = staticMethods;
     }
 
     @Override
     public String toString() {
         return "NumberOfMethodsDto{" +
-                "totalNumberOfMethods=" + totalNumberOfMethods +
-                ", totalPrivateMethods=" + totalPrivateMethods +
-                ", totalProtectedMethods=" + totalProtectedMethods +
-                ", totalPublicMethods=" + totalPublicMethods +
-                ", totalStaticMethods=" + totalStaticMethods +
+                "totalNumberOfMethods=" + totalMethods +
+                ", totalPrivateMethods=" + privateMethods +
+                ", totalProtectedMethods=" + protectedMethods +
+                ", totalPublicMethods=" + publicMethods +
+                ", totalStaticMethods=" + staticMethods +
                 '}';
     }
 }

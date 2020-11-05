@@ -1,6 +1,6 @@
 package aggregatemetrics;
 
-import dto.classsummary.ClassSummaryDto;
+import dto.ClassSummaryDto;
 
 import java.util.List;
 

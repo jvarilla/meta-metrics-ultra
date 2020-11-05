@@ -1,7 +1,6 @@
 package dto;
 
 import aggregatemetrics.SummaryDto;
-import dto.classsummary.ClassSummaryDto;
 
 import java.util.List;
 
@@ -32,7 +31,5 @@ public class MetricsResultsDto {
     public void setClasses(List<ClassSummaryDto> classes) {
         this.classes = classes;
     }
-
-
 
 }

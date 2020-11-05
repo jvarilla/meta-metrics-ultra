@@ -1,71 +1,71 @@
 package numfields;
 
 public class NumFieldsDto {
-    private int totalNumberOfFields;
-    private int totalPrivateFields;
-    private int totalProtectedFields;
-    private int totalPublicFields;
-    private int totalStaticFields;
+    private int totalFields;
+    private int privateFields;
+    private int protectedFields;
+    private int publicFields;
+    private int staticFields;
 
-    public NumFieldsDto(int totalNumberOfFields, int totalPrivateFields, int totalProtectedFields, int totalPublicFields, int totalStaticFields) {
-        this.totalNumberOfFields = totalNumberOfFields;
-        this.totalPrivateFields = totalPrivateFields;
-        this.totalProtectedFields = totalProtectedFields;
-        this.totalPublicFields = totalPublicFields;
-        this.totalStaticFields = totalStaticFields;
+    public NumFieldsDto(int totalFields, int privateFields, int protectedFields, int publicFields, int staticFields) {
+        this.totalFields = totalFields;
+        this.privateFields = privateFields;
+        this.protectedFields = protectedFields;
+        this.publicFields = publicFields;
+        this.staticFields = staticFields;
     }
 
     public NumFieldsDto() {
     }
 
-    public int getTotalNumberOfFields() {
-        return totalNumberOfFields;
+    public int getTotalFields() {
+        return totalFields;
     }
 
-    public void setTotalNumberOfFields(int totalNumberOfFields) {
-        this.totalNumberOfFields = totalNumberOfFields;
+    public void setTotalFields(int totalFields) {
+        this.totalFields = totalFields;
     }
 
-    public int getTotalPrivateFields() {
-        return totalPrivateFields;
+    public int getPrivateFields() {
+        return privateFields;
     }
 
-    public void setTotalPrivateFields(int totalPrivateFields) {
-        this.totalPrivateFields = totalPrivateFields;
+    public void setPrivateFields(int privateFields) {
+        this.privateFields = privateFields;
     }
 
-    public int getTotalProtectedFields() {
-        return totalProtectedFields;
+    public int getProtectedFields() {
+        return protectedFields;
     }
 
-    public void setTotalProtectedFields(int totalProtectedFields) {
-        this.totalProtectedFields = totalProtectedFields;
+    public void setProtectedFields(int protectedFields) {
+        this.protectedFields = protectedFields;
     }
 
-    public int getTotalPublicFields() {
-        return totalPublicFields;
+    public int getPublicFields() {
+        return publicFields;
     }
 
-    public void setTotalPublicFields(int totalPublicFields) {
-        this.totalPublicFields = totalPublicFields;
+    public void setPublicFields(int publicFields) {
+        this.publicFields = publicFields;
     }
 
-    public int getTotalStaticFields() {
-        return totalStaticFields;
+    public int getStaticFields() {
+        return staticFields;
     }
 
-    public void setTotalStaticFields(int totalStaticFields) {
-        this.totalStaticFields = totalStaticFields;
+    public void setStaticFields(int staticFields) {
+        this.staticFields = staticFields;
     }
 
     @Override
     public String toString() {
         return "NumFieldsDto{" +
-                "totalNumberOfFields=" + totalNumberOfFields +
-                ", totalPrivateFields=" + totalPrivateFields +
-                ", totalProtectedFields=" + totalProtectedFields +
-                ", totalPublicFields=" + totalPublicFields +
-                ", totalStaticFields=" + totalStaticFields +
+                "totalNumberOfFields=" + totalFields +
+                ", totalPrivateFields=" + privateFields +
+                ", totalProtectedFields=" + protectedFields +
+                ", totalPublicFields=" + publicFields +
+                ", totalStaticFields=" + staticFields +
                 '}';
     }
 }

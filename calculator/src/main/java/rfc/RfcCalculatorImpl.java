@@ -44,9 +44,9 @@ public class RfcCalculatorImpl implements RfcCalculator {
 
 
         rfcMetricsDto.setNumberOfFieldObjects(numFieldsThatAreObjects);
-        rfcMetricsDto.setNumberOfMethodsFromCurrentClass(numMethodsFromCurrentClass);
-        rfcMetricsDto.setNumberOfMethodsFromFieldObjects(methodsFromFields);
-        rfcMetricsDto.setNumberOfInheritedMethods(numInheritedMethods);
+        rfcMetricsDto.setMethodsFromCurrentClass(numMethodsFromCurrentClass);
+        rfcMetricsDto.setMethodsFromFieldObjects(methodsFromFields);
+        rfcMetricsDto.setMethodsInherited(numInheritedMethods);
         rfcMetricsDto.setTotal(numMethodsFromCurrentClass + methodsFromFields + numInheritedMethods);
 
 

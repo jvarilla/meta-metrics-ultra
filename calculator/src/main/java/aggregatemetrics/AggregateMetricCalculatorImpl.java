@@ -1,6 +1,6 @@
 package aggregatemetrics;
 
-import dto.classsummary.ClassSummaryDto;
+import dto.ClassSummaryDto;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class AggregateMetricCalculatorImpl implements AggregateMetricsCalculator
             totalInterfaceImplementations += classSummaryDto.getInterfaces().getNumberOfInterfacesImplemented();
             totalDit += classSummaryDto.getDit().getValue();
             totalWmc += classSummaryDto.getWmc().getValue();
-            totalNumFields += classSummaryDto.getNumFields().getTotalNumberOfFields();
+            totalNumFields += classSummaryDto.getNumFields().getTotalFields();
             totalRfc += classSummaryDto.getRfc().getTotal();
         }
 

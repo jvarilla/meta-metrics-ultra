@@ -30,19 +30,19 @@ public class WmcCalculatorImpl implements WmcCalculator {
 
    public NumberOfMethodsDto calculateMethodsMetrics(Class classToAnalyze) {
         NumberOfMethodsDto numberOfMethodsDto = new NumberOfMethodsDto();
-        numberOfMethodsDto.setTotalNumberOfMethods(getEligibleMethods(classToAnalyze).length);
+        numberOfMethodsDto.setTotalMethods(getEligibleMethods(classToAnalyze).length);
 
         numberOfMethodsDto
-                .setTotalPublicMethods(countNumMethodsWithCondition(classToAnalyze,publicMethodsCondition));
+                .setPublicMethods(countNumMethodsWithCondition(classToAnalyze,publicMethodsCondition));
 
         numberOfMethodsDto
-                .setTotalProtectedMethods(countNumMethodsWithCondition(classToAnalyze,protectedMethodsCondition));
+                .setProtectedMethods(countNumMethodsWithCondition(classToAnalyze,protectedMethodsCondition));
 
         numberOfMethodsDto
-                .setTotalPrivateMethods(countNumMethodsWithCondition(classToAnalyze,privateMethodsCondition));
+                .setPrivateMethods(countNumMethodsWithCondition(classToAnalyze,privateMethodsCondition));
 
         numberOfMethodsDto
-                .setTotalStaticMethods(countNumMethodsWithCondition(classToAnalyze,staticMethodsCondition));
+                .setStaticMethods(countNumMethodsWithCondition(classToAnalyze,staticMethodsCondition));
 
         return numberOfMethodsDto;
 

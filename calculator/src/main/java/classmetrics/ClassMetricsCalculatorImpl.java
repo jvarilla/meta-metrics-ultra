@@ -5,14 +5,13 @@ import aggregatemetrics.AggregateMetricsCalculator;
 import dit.DitCalculator;
 import dit.DitCalculatorImpl;
 import dto.MetricsResultsDto;
-import dto.classsummary.ClassSummaryDto;
+import dto.ClassSummaryDto;
 import interfaces.InterfacesCalculator;
 import interfaces.InterfacesCalculatorImpl;
 import numfields.NumFieldsCalculator;
 import numfields.NumFieldsCalculatorImpl;
 import rfc.RfcCalculator;
 import rfc.RfcCalculatorImpl;
-import testclasses.Parent;
 import wmc.WmcCalculator;
 import wmc.WmcCalculatorImpl;
 

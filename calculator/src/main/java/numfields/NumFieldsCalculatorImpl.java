@@ -23,11 +23,11 @@ public class NumFieldsCalculatorImpl implements NumFieldsCalculator {
         NumFieldsDto numFieldsDto = new NumFieldsDto();
 
         Field[] fields =  theClass.getDeclaredFields();
-        numFieldsDto.setTotalNumberOfFields(fields.length);
-        numFieldsDto.setTotalPrivateFields(countNumFieldsWithCondition(fields, privateFieldsCondition));
-        numFieldsDto.setTotalProtectedFields(countNumFieldsWithCondition(fields, protectedFieldsCondition));
-        numFieldsDto.setTotalPublicFields(countNumFieldsWithCondition(fields, publicFieldsCondition));
-        numFieldsDto.setTotalStaticFields( countNumFieldsWithCondition(fields, staticFieldsCondition));
+        numFieldsDto.setTotalFields(fields.length);
+        numFieldsDto.setPrivateFields(countNumFieldsWithCondition(fields, privateFieldsCondition));
+        numFieldsDto.setProtectedFields(countNumFieldsWithCondition(fields, protectedFieldsCondition));
+        numFieldsDto.setPublicFields(countNumFieldsWithCondition(fields, publicFieldsCondition));
+        numFieldsDto.setStaticFields( countNumFieldsWithCondition(fields, staticFieldsCondition));
 
         return numFieldsDto;
     }

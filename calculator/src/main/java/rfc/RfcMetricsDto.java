@@ -2,19 +2,19 @@ package rfc;
 
 public class RfcMetricsDto {
     private int total;
-    private int numberOfMethodsFromCurrentClass;
-    private int numberOfMethodsFromFieldObjects;
-    private int numberOfInheritedMethods;
+    private int methodsFromCurrentClass;
+    private int methodsFromFieldObjects;
+    private int methodsInherited;
     private int numberOfFieldObjects;
 
     public RfcMetricsDto() {
     }
 
-    public RfcMetricsDto(int total, int numberOfMethodsFromCurrentClass, int numberOfMethodsFromFieldObjects, int numberOfInheritedMethods, int numberOfFieldObjects) {
+    public RfcMetricsDto(int total, int methodsFromCurrentClass, int methodsFromFieldObjects, int methodsInherited, int numberOfFieldObjects) {
         this.total = total;
-        this.numberOfMethodsFromCurrentClass = numberOfMethodsFromCurrentClass;
-        this.numberOfMethodsFromFieldObjects = numberOfMethodsFromFieldObjects;
-        this.numberOfInheritedMethods = numberOfInheritedMethods;
+        this.methodsFromCurrentClass = methodsFromCurrentClass;
+        this.methodsFromFieldObjects = methodsFromFieldObjects;
+        this.methodsInherited = methodsInherited;
         this.numberOfFieldObjects = numberOfFieldObjects;
     }
 
@@ -26,28 +26,28 @@ public class RfcMetricsDto {
         this.total = total;
     }
 
-    public int getNumberOfMethodsFromCurrentClass() {
-        return numberOfMethodsFromCurrentClass;
+    public int getMethodsFromCurrentClass() {
+        return methodsFromCurrentClass;
     }
 
-    public void setNumberOfMethodsFromCurrentClass(int numberOfMethodsFromCurrentClass) {
-        this.numberOfMethodsFromCurrentClass = numberOfMethodsFromCurrentClass;
+    public void setMethodsFromCurrentClass(int methodsFromCurrentClass) {
+        this.methodsFromCurrentClass = methodsFromCurrentClass;
     }
 
-    public int getNumberOfMethodsFromFieldObjects() {
-        return numberOfMethodsFromFieldObjects;
+    public int getMethodsFromFieldObjects() {
+        return methodsFromFieldObjects;
     }
 
-    public void setNumberOfMethodsFromFieldObjects(int numberOfMethodsFromFieldObjects) {
-        this.numberOfMethodsFromFieldObjects = numberOfMethodsFromFieldObjects;
+    public void setMethodsFromFieldObjects(int methodsFromFieldObjects) {
+        this.methodsFromFieldObjects = methodsFromFieldObjects;
     }
 
-    public int getNumberOfInheritedMethods() {
-        return numberOfInheritedMethods;
+    public int getMethodsInherited() {
+        return methodsInherited;
     }
 
-    public void setNumberOfInheritedMethods(int numberOfInheritedMethods) {
-        this.numberOfInheritedMethods = numberOfInheritedMethods;
+    public void setMethodsInherited(int methodsInherited) {
+        this.methodsInherited = methodsInherited;
     }
 
     public int getNumberOfFieldObjects() {
