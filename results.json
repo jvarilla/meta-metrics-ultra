@@ -1,7 +1,9 @@
 {
   "summary": {
-    "loc": 0,
-    "numberOfFiles": 0,
+    "pathToSrc": "../shopping/src",
+    "pathToBin": "../shopping/bin",
+    "loc": 156,
+    "numberOfFiles": 8,
     "numberOfClasses": 8,
     "numberOfInterfaceImplementations": 0,
     "avgDit": 0.5,
