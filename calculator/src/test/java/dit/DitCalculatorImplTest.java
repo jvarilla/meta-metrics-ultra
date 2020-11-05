@@ -1,6 +1,5 @@
 package dit;
 
-import dto.classsummary.dit.DitMetricsDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

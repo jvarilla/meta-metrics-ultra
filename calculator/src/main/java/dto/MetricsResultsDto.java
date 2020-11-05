@@ -1,5 +1,6 @@
 package dto;
 
+import aggregatemetrics.SummaryDto;
 import dto.classsummary.ClassSummaryDto;
 
 import java.util.List;

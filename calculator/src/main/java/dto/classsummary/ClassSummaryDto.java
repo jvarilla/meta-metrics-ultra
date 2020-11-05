@@ -1,11 +1,10 @@
 package dto.classsummary;
 
-import dto.classsummary.dit.DitMetricsDto;
-import dto.classsummary.interfaces.InterfacesMetricsDto;
-import dto.classsummary.numfields.NumFieldsDto;
-import dto.classsummary.rfc.RfcMetricsDto;
-import dto.classsummary.wmc.NumberOfMethodsDto;
-import dto.classsummary.wmc.WmcMetricsDto;
+import dit.DitMetricsDto;
+import interfaces.InterfacesMetricsDto;
+import numfields.NumFieldsDto;
+import rfc.RfcMetricsDto;
+import wmc.WmcMetricsDto;
 
 public class ClassSummaryDto {
     private String className;

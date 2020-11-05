@@ -1,4 +1,4 @@
-package dto.classsummary.wmc;
+package wmc;
 
 public class NumberOfMethodsDto {
     private int totalNumberOfMethods;

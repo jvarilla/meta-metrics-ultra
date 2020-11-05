@@ -1,19 +1,21 @@
-package dto.classsummary.rfc;
+package rfc;
 
 public class RfcMetricsDto {
     private int total;
     private int numberOfMethodsFromCurrentClass;
     private int numberOfMethodsFromFieldObjects;
+    private int numberOfInheritedMethods;
     private int numberOfFieldObjects;
 
-    public RfcMetricsDto(int total, int numberOfMethodsFromCurrentClass, int numberOfMethodsFromFieldObjects, int numberOfFieldObjects) {
+    public RfcMetricsDto() {
+    }
+
+    public RfcMetricsDto(int total, int numberOfMethodsFromCurrentClass, int numberOfMethodsFromFieldObjects, int numberOfInheritedMethods, int numberOfFieldObjects) {
         this.total = total;
         this.numberOfMethodsFromCurrentClass = numberOfMethodsFromCurrentClass;
         this.numberOfMethodsFromFieldObjects = numberOfMethodsFromFieldObjects;
+        this.numberOfInheritedMethods = numberOfInheritedMethods;
         this.numberOfFieldObjects = numberOfFieldObjects;
-    }
-
-    public RfcMetricsDto() {
     }
 
     public int getTotal() {
@@ -38,6 +40,14 @@ public class RfcMetricsDto {
 
     public void setNumberOfMethodsFromFieldObjects(int numberOfMethodsFromFieldObjects) {
         this.numberOfMethodsFromFieldObjects = numberOfMethodsFromFieldObjects;
+    }
+
+    public int getNumberOfInheritedMethods() {
+        return numberOfInheritedMethods;
+    }
+
+    public void setNumberOfInheritedMethods(int numberOfInheritedMethods) {
+        this.numberOfInheritedMethods = numberOfInheritedMethods;
     }
 
     public int getNumberOfFieldObjects() {

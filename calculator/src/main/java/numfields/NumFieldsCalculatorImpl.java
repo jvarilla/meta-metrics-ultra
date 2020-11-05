@@ -1,7 +1,5 @@
 package numfields;
 
-import dto.classsummary.numfields.NumFieldsDto;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;

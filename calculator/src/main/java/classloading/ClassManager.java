@@ -8,10 +8,13 @@ import com.google.gson.GsonBuilder;
 import dit.DitCalculator;
 import dit.DitCalculatorImpl;
 import dto.classsummary.ClassSummaryDto;
-import dto.classsummary.dit.DitMetricsDto;
-import dto.classsummary.interfaces.InterfacesMetricsDto;
-import dto.classsummary.numfields.NumFieldsDto;
-import dto.classsummary.wmc.WmcMetricsDto;
+import dit.DitMetricsDto;
+import interfaces.InterfacesMetricsDto;
+import numfields.NumFieldsDto;
+import rfc.RfcCalculator;
+import rfc.RfcCalculatorImpl;
+import rfc.RfcMetricsDto;
+import wmc.WmcMetricsDto;
 import interfaces.InterfacesCalculator;
 import interfaces.InterfacesCalculatorImpl;
 import numfields.NumFieldsCalculator;
@@ -33,8 +36,8 @@ public class ClassManager {
         // For gradle projects use build/classes/java/main
         File file = new File("C:\\Users\\jvari\\ProjectsJ\\SE433\\poc\\build\\classes\\java\\main");
         ClassLoader classLoader = new URLClassLoader(new URL[] {file.toURI().toURL()});
-        Field f = ClassLoader.class.getDeclaredField("classes");
-        f.setAccessible(true);
+//        Field f = ClassLoader.class.getDeclaredField("classes");
+//        f.setAccessible(true);
         ClassManager.class.getClassLoader();
 
         ImmutableSet<ClassPath.ClassInfo> classInfos = ClassPath.from(classLoader).getAllClasses();
@@ -47,6 +50,7 @@ public class ClassManager {
         DitCalculator ditCalculator = new DitCalculatorImpl();
         InterfacesCalculator interfacesCalculator = new InterfacesCalculatorImpl();
         NumFieldsCalculator numFieldsCalculator = new NumFieldsCalculatorImpl();
+        RfcCalculator rfcCalculator = new RfcCalculatorImpl();
 
         List<ClassPath.ClassInfo> classInfoList = classInfos.asList();
 
@@ -58,12 +62,7 @@ public class ClassManager {
                         DitMetricsDto ditMetricsDto = ditCalculator.calculate(theClass);
                         InterfacesMetricsDto interfacesMetricsDto = interfacesCalculator.calculate(theClass);
                         NumFieldsDto numFieldsDto = numFieldsCalculator.calculate(theClass);
-
-//                        System.out.println(theClass.getName());
-//                        System.out.println(wmcMetricsDto);
-//                        System.out.println(ditMetricsDto);
-//                        System.out.println(interfacesMetricsDto);
-//                        System.out.println(numFieldsDto);
+                        RfcMetricsDto rfcMetricsDto = rfcCalculator.calculate(theClass);
 
                         ClassSummaryDto classSummaryDto = new ClassSummaryDto();
                         classSummaryDto.setClassName(theClass.getName());
@@ -71,6 +70,7 @@ public class ClassManager {
                         classSummaryDto.setWmc(wmcMetricsDto);
                         classSummaryDto.setInterfaces(interfacesMetricsDto);
                         classSummaryDto.setNumFields(numFieldsDto);
+                        classSummaryDto.setRfc(rfcMetricsDto);
 
                         System.out.println(gson.toJson(classSummaryDto, ClassSummaryDto.class));
                     } catch (Exception e) {

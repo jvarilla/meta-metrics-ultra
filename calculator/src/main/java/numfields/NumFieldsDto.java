@@ -1,4 +1,4 @@
-package dto.classsummary.numfields;
+package numfields;
 
 public class NumFieldsDto {
     private int totalNumberOfFields;

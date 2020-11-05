@@ -1,7 +1,5 @@
 package dit;
 
-import dto.classsummary.dit.DitMetricsDto;
-
 import java.util.ArrayList;
 import java.util.List;
 

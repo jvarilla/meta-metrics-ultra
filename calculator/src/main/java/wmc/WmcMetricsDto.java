@@ -1,4 +1,4 @@
-package dto.classsummary.wmc;
+package wmc;
 
 public class WmcMetricsDto {
     private int value;

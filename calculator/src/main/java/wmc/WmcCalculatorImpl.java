@@ -1,8 +1,5 @@
 package wmc;
 
-import dto.classsummary.wmc.NumberOfMethodsDto;
-import dto.classsummary.wmc.WmcMetricsDto;
-
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;

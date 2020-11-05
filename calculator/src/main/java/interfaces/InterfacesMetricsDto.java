@@ -1,4 +1,4 @@
-package dto.classsummary.interfaces;
+package interfaces;
 
 import java.util.List;
 

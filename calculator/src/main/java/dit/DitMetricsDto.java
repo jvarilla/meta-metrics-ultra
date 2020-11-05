@@ -1,4 +1,4 @@
-package dto.classsummary.dit;
+package dit;
 
 import java.util.List;
 

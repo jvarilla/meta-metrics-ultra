@@ -1,6 +1,8 @@
-package dto;
+package aggregatemetrics;
 
 public class SummaryDto {
+    private String pathToSrc;
+    private String pathToBin;
     private int loc;
     private int numberOfFiles;
     private int numberOfClasses;
@@ -10,20 +12,20 @@ public class SummaryDto {
     private double avgNumFields;
     private double avgRFC;
 
-    public SummaryDto(int loc, int numberOfFiles, int numberOfClasses,
-                      int numberOfInterfaceImplementations, double avgDit,
-                      double avgWmc, double avgNumFields, double avgRFC) {
-        this.loc = loc;
-        this.numberOfFiles = numberOfFiles;
-        this.numberOfClasses = numberOfClasses;
-        this.numberOfInterfaceImplementations = numberOfInterfaceImplementations;
-        this.avgDit = avgDit;
-        this.avgWmc = avgWmc;
-        this.avgNumFields = avgNumFields;
-        this.avgRFC = avgRFC;
+    public String getPathToSrc() {
+        return pathToSrc;
     }
 
-    public SummaryDto() {
+    public void setPathToSrc(String pathToSrc) {
+        this.pathToSrc = pathToSrc;
+    }
+
+    public String getPathToBin() {
+        return pathToBin;
+    }
+
+    public void setPathToBin(String pathToBin) {
+        this.pathToBin = pathToBin;
     }
 
     public int getLoc() {
@@ -89,7 +91,4 @@ public class SummaryDto {
     public void setAvgRFC(double avgRFC) {
         this.avgRFC = avgRFC;
     }
-
-
-
 }
