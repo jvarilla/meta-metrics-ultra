@@ -26,6 +26,18 @@ public class ClassMetricsCalculatorImpl implements ClassMetricsCalculator {
     private WmcCalculator wmcCalculator;
     private AggregateMetricsCalculator aggregateMetricsCalculator;
 
+    public ClassMetricsCalculatorImpl(DitCalculator ditCalculator, InterfacesCalculator interfacesCalculator,
+                                      NumFieldsCalculator numFieldsCalculator, RfcCalculator rfcCalculator,
+                                      WmcCalculator wmcCalculator,
+                                      AggregateMetricsCalculator aggregateMetricsCalculator) {
+        this.ditCalculator = ditCalculator;
+        this.interfacesCalculator = interfacesCalculator;
+        this.numFieldsCalculator = numFieldsCalculator;
+        this.rfcCalculator = rfcCalculator;
+        this.wmcCalculator = wmcCalculator;
+        this.aggregateMetricsCalculator = aggregateMetricsCalculator;
+    }
+
     public ClassMetricsCalculatorImpl() {
         this.ditCalculator = new DitCalculatorImpl();
         this.interfacesCalculator = new InterfacesCalculatorImpl();
