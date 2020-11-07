@@ -2,14 +2,14 @@
   "summary": {
     "pathToSrc": "../shopping/src",
     "pathToBin": "../shopping/bin",
-    "loc": 156,
+    "loc": 43,
     "numberOfFiles": 8,
     "numberOfClasses": 8,
     "numberOfInterfaceImplementations": 0,
     "avgDit": 0.5,
     "avgWmc": 3.625,
     "avgNumFields": 2.125,
-    "avgRFC": 44.125
+    "avgRFC": 36.875
   },
   "classes": [
     {
@@ -120,9 +120,9 @@
         "staticFields": 6
       },
       "rfc": {
-        "total": 108,
+        "total": 96,
         "methodsFromCurrentClass": 3,
-        "methodsFromFieldObjects": 92,
+        "methodsFromFieldObjects": 80,
         "methodsInherited": 13,
         "numberOfFieldObjects": 7
       },
@@ -198,9 +198,9 @@
         "staticFields": 0
       },
       "rfc": {
-        "total": 99,
+        "total": 53,
         "methodsFromCurrentClass": 7,
-        "methodsFromFieldObjects": 92,
+        "methodsFromFieldObjects": 46,
         "methodsInherited": 0,
         "numberOfFieldObjects": 2
       },
