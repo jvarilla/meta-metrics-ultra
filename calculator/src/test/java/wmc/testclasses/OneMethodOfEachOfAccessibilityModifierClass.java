@@ -1,6 +1,6 @@
 package wmc.testclasses;
 
-public class OneMethodOfEachOfAccessibilityModifiersClass {
+public class OneMethodOfEachOfAccessibilityModifierClass {
     private void privateMethod() { }
     void packagePrivateMethod() { }
     protected void protectedMethod() { }

@@ -27,6 +27,7 @@ public class NumFieldsCalculatorImpl implements NumFieldsCalculator {
         numFieldsDto.setPrivateFields(countNumFieldsWithCondition(fields, privateFieldsCondition));
         numFieldsDto.setProtectedFields(countNumFieldsWithCondition(fields, protectedFieldsCondition));
         numFieldsDto.setPublicFields(countNumFieldsWithCondition(fields, publicFieldsCondition));
+        numFieldsDto.setPackagePrivateFields(getNumberOfPackagePrivateFields(numFieldsDto));
         numFieldsDto.setStaticFields( countNumFieldsWithCondition(fields, staticFieldsCondition));
 
         return numFieldsDto;
@@ -35,5 +36,10 @@ public class NumFieldsCalculatorImpl implements NumFieldsCalculator {
     public int countNumFieldsWithCondition(Field[] fields, Predicate<Field> condition) {
         return Arrays.stream(fields)
                 .filter(condition).toArray().length;
+    }
+
+    private int getNumberOfPackagePrivateFields(NumFieldsDto numFieldsDto) {
+        return numFieldsDto.getTotalFields() - numFieldsDto.getPrivateFields()
+                - numFieldsDto.getPublicFields() - numFieldsDto.getProtectedFields();
     }
 }

@@ -3,20 +3,6 @@ package numfields;
 public class NumFieldsDto {
     private int totalFields;
     private int privateFields;
-    private int protectedFields;
-    private int publicFields;
-    private int staticFields;
-
-    public NumFieldsDto(int totalFields, int privateFields, int protectedFields, int publicFields, int staticFields) {
-        this.totalFields = totalFields;
-        this.privateFields = privateFields;
-        this.protectedFields = protectedFields;
-        this.publicFields = publicFields;
-        this.staticFields = staticFields;
-    }
-
-    public NumFieldsDto() {
-    }
 
     public int getTotalFields() {
         return totalFields;
@@ -32,6 +18,14 @@ public class NumFieldsDto {
 
     public void setPrivateFields(int privateFields) {
         this.privateFields = privateFields;
+    }
+
+    public int getPackagePrivateFields() {
+        return packagePrivateFields;
+    }
+
+    public void setPackagePrivateFields(int packagePrivateFields) {
+        this.packagePrivateFields = packagePrivateFields;
     }
 
     public int getProtectedFields() {
@@ -58,14 +52,10 @@ public class NumFieldsDto {
         this.staticFields = staticFields;
     }
 
-    @Override
-    public String toString() {
-        return "NumFieldsDto{" +
-                "totalNumberOfFields=" + totalFields +
-                ", totalPrivateFields=" + privateFields +
-                ", totalProtectedFields=" + protectedFields +
-                ", totalPublicFields=" + publicFields +
-                ", totalStaticFields=" + staticFields +
-                '}';
-    }
+    private int packagePrivateFields;
+    private int protectedFields;
+    private int publicFields;
+    private int staticFields;
+
+
 }

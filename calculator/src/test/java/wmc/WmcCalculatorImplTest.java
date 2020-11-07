@@ -41,7 +41,7 @@ class WmcCalculatorImplTest {
             "type and one constructor")
     void calculateWmcWithOneMethodOfEachAccessibilityModifiers() {
         WmcMetricsDto results =
-                this.wmcCalculator.calculate(OneMethodOfEachOfAccessibilityModifiersClass.class);
+                this.wmcCalculator.calculate(OneMethodOfEachOfAccessibilityModifierClass.class);
 
         assertEquals(results.getValue(), 5);
         assertEquals(results.getNumberOfConstructors(), 1);
