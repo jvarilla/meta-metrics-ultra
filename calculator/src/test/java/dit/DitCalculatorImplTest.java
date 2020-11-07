@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Dit Calculator Test")
+@DisplayName("Dit Calculator")
 class DitCalculatorImplTest {
     private DitCalculator ditCalculator;
 
@@ -19,7 +19,7 @@ class DitCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should correctly calculate DIT for class with no ancestors")
+    @DisplayName("Should correctly calculate Dit for class with no ancestors")
     void calculateDitWithNoAncestors() {
         Class<Parent> classWithNoAncestors = Parent.class;
 
@@ -31,7 +31,7 @@ class DitCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should correctly calculate DIT for class with one ancestors")
+    @DisplayName("Should correctly calculate Dit for class with one ancestors")
     void calculateDitWithOneAncestors() {
         Class<ChildOne> classWithOneAncestor = ChildOne.class;
 
@@ -42,7 +42,7 @@ class DitCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should correctly calculate DIT for class with multiple ancestors")
+    @DisplayName("Should correctly calculate Dit for class with multiple ancestors")
     void calculateDitWithMultipleAncestors() {
         Class<GrandChildOne> classWithTwoAncestors = GrandChildOne.class;
 

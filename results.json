@@ -2,7 +2,7 @@
   "summary": {
     "pathToSrc": "../shopping/src",
     "pathToBin": "../shopping/bin",
-    "loc": 43,
+    "loc": 155,
     "numberOfFiles": 8,
     "numberOfClasses": 8,
     "numberOfInterfaceImplementations": 0,

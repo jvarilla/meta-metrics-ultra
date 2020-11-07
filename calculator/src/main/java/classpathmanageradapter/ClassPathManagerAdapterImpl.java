@@ -34,7 +34,7 @@ public class ClassPathManagerAdapterImpl implements ClassPathManagerAdapter {
 
             this.loadedClasses = classInfoList.stream().filter(classInfo -> {
                 return !this.classesOfThisProject.contains(classInfo);
-            }).map(ClassPath.ClassInfo::load).filter(clazz -> !clazz.isInterface()).collect(Collectors.toList());
+            }).map(ClassPath.ClassInfo::load).filter(clazz -> !clazz.isInterface() && !clazz.isEnum()).collect(Collectors.toList());
             return true;
 
         } catch (Exception exception) {
