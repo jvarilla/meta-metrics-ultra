@@ -8,7 +8,7 @@ public class AggregateMetricCalculatorImpl implements AggregateMetricsCalculator
     @Override
     public SummaryDto calculate(List<ClassSummaryDto> clazzMetricSummaries) {
         SummaryDto summaryDto = new SummaryDto();
-        int numberOfClasses = clazzMetricSummaries.size();
+        int numberOfClasses = clazzMetricSummaries.size() == 0 ? 1: clazzMetricSummaries.size();
         int totalInterfaceImplementations = 0;
         double totalDit = 0;
         double totalWmc = 0;
@@ -24,7 +24,7 @@ public class AggregateMetricCalculatorImpl implements AggregateMetricsCalculator
         }
 
         summaryDto.setNumberOfClasses(numberOfClasses);
-        summaryDto.setNumberOfInterfaceImplementations(totalInterfaceImplementations / numberOfClasses);
+        summaryDto.setNumberOfInterfaceImplementations(totalInterfaceImplementations);
         summaryDto.setAvgDit(totalDit / numberOfClasses);
         summaryDto.setAvgWmc(totalWmc / numberOfClasses);
         summaryDto.setAvgNumFields(totalNumFields / numberOfClasses);
