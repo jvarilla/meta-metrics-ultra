@@ -4,6 +4,9 @@ import dit.DitCalculator;
 import dit.DitCalculatorImpl;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class RfcCalculatorImpl implements RfcCalculator {
     private int total;
@@ -20,16 +23,18 @@ public class RfcCalculatorImpl implements RfcCalculator {
     public RfcMetricsDto calculate(Class<?> theClass) {
         RfcMetricsDto rfcMetricsDto = new RfcMetricsDto();
 
-        int numFieldsThatAreObjects = (int) Arrays.stream(theClass.getDeclaredFields()).filter(field -> {
-            Class<?> c = field.getClass();
-            return !(c.equals(String.class)
-                    || c.equals(String[].class)
-                    || c.isArray() && c.getComponentType().isPrimitive());
-        }).count();
+        List<Class<?>> fieldObjClasses = Arrays.stream(theClass.getDeclaredFields()).filter(field -> {
+            Class<?> c = field.getType();
+            return isAnObjectField(c);
+        }).map(field -> field.getType()).collect(Collectors.toList());
 
-        int methodsFromFields = Arrays.stream(theClass.getFields()).map(field -> {
-            return field.getClass().getDeclaredMethods().length;
-        }).reduce(0, Integer::sum);
+
+        int numFieldsThatAreObjects = fieldObjClasses.size();
+        int methodsFromFields = 0;
+
+        for(Class<?> fieldObjClass : fieldObjClasses) {
+            methodsFromFields += fieldObjClass.getDeclaredMethods().length;
+        }
 
         int numMethodsFromCurrentClass = theClass.getDeclaredMethods().length;
 
@@ -51,5 +56,12 @@ public class RfcCalculatorImpl implements RfcCalculator {
 
 
         return rfcMetricsDto;
+    }
+
+    private boolean isAnObjectField(Class<?> clazz) {
+        return !(clazz.isArray()
+                && clazz.isPrimitive())
+                && !(clazz.isPrimitive())
+                && !(clazz.getName().trim().equals("[I"));
     }
 }

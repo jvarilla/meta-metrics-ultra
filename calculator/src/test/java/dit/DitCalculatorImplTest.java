@@ -25,7 +25,8 @@ class DitCalculatorImplTest {
 
         DitMetricsDto results = this.ditCalculator.calculate(classWithNoAncestors);
 
-        assertEquals(results.getValue(), 0);
+
+        assertEquals(0, results.getValue());
         assertTrue(results.getAncestors().isEmpty());
     }
 
@@ -36,8 +37,8 @@ class DitCalculatorImplTest {
 
         DitMetricsDto results = this.ditCalculator.calculate(classWithOneAncestor);
 
-        assertEquals(results.getValue(), 1);
-        assertEquals(results.getAncestors().size(), 1);
+        assertEquals(1, results.getValue());
+        assertEquals(1, results.getAncestors().size());
     }
 
     @Test
@@ -47,8 +48,8 @@ class DitCalculatorImplTest {
 
         DitMetricsDto results = this.ditCalculator.calculate(classWithTwoAncestors);
 
-        assertEquals(results.getValue(), 2);
-        assertEquals(results.getAncestors().size(), 2);
+        assertEquals(2, results.getValue());
+        assertEquals(2, results.getAncestors().size());
     }
 
 }

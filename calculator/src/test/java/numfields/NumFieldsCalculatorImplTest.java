@@ -23,7 +23,7 @@ class NumFieldsCalculatorImplTest {
     void calculateNoFields() {
         NumFieldsDto results = this.numFieldsCalculator.calculate(NoFieldsClass.class);
 
-        assertEquals(results.getTotalFields(), 0);
+        assertEquals(0, results.getTotalFields());
     }
 
     @Test
@@ -31,8 +31,8 @@ class NumFieldsCalculatorImplTest {
     void calculateOneStaticFields() {
         NumFieldsDto results = this.numFieldsCalculator.calculate(OneStaticFieldClass.class);
 
-        assertEquals(results.getTotalFields(), 1);
-        assertEquals(results.getStaticFields(), 1);
+        assertEquals(1, results.getTotalFields());
+        assertEquals(1, results.getStaticFields());
     }
 
     @Test
@@ -42,10 +42,10 @@ class NumFieldsCalculatorImplTest {
         NumFieldsDto results = this.numFieldsCalculator.calculate(
                 OneFieldOfEachAccessibilityModifierClass.class);
 
-        assertEquals(results.getTotalFields(), 4);
-        assertEquals(results.getPublicFields(), 1);
-        assertEquals(results.getProtectedFields(), 1);
-        assertEquals(results.getPackagePrivateFields(), 1);
-        assertEquals(results.getPrivateFields(), 1);
+        assertEquals(4, results.getTotalFields());
+        assertEquals(1, results.getPublicFields());
+        assertEquals(1, results.getProtectedFields());
+        assertEquals(1, results.getPackagePrivateFields());
+        assertEquals(1, results.getPrivateFields());
     }
 }

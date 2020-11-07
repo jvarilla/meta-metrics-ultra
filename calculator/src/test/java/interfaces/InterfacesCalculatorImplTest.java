@@ -27,8 +27,8 @@ class InterfacesCalculatorImplTest {
         InterfacesMetricsDto interfacesMetricsDto;
         interfacesMetricsDto = this.interfacesCalculator.calculate(ClassThatImplementsNoInterfaces.class);
 
-        assertEquals(interfacesMetricsDto.getNumberOfInterfacesImplemented(), 0);
-        assertEquals(interfacesMetricsDto.getInterfacesImplemented().size(), 0);
+        assertEquals(0, interfacesMetricsDto.getNumberOfInterfacesImplemented());
+        assertEquals(0, interfacesMetricsDto.getInterfacesImplemented().size());
     }
 
     @Test
@@ -38,8 +38,8 @@ class InterfacesCalculatorImplTest {
         InterfacesMetricsDto interfacesMetricsDto;
         interfacesMetricsDto = this.interfacesCalculator.calculate(ClassThatImplementsOneInterface.class);
 
-        assertEquals(interfacesMetricsDto.getNumberOfInterfacesImplemented(), 1);
-        assertEquals(interfacesMetricsDto.getInterfacesImplemented().size(), 1);
+        assertEquals(1, interfacesMetricsDto.getNumberOfInterfacesImplemented());
+        assertEquals(1, interfacesMetricsDto.getInterfacesImplemented().size());
         assertTrue(interfacesMetricsDto.getInterfacesImplemented().contains(interfaceAName));
     }
 
@@ -52,8 +52,8 @@ class InterfacesCalculatorImplTest {
         InterfacesMetricsDto interfacesMetricsDto;
         interfacesMetricsDto = this.interfacesCalculator.calculate(ClassThatImplementsTwoInterfaces.class);
 
-        assertEquals(interfacesMetricsDto.getNumberOfInterfacesImplemented(), 2);
-        assertEquals(interfacesMetricsDto.getInterfacesImplemented().size(), 2);
+        assertEquals(2, interfacesMetricsDto.getNumberOfInterfacesImplemented());
+        assertEquals(2, interfacesMetricsDto.getInterfacesImplemented().size());
         assertTrue(interfacesMetricsDto.getInterfacesImplemented().contains(interfaceAName));
         assertTrue(interfacesMetricsDto.getInterfacesImplemented().contains(interfaceBName));
     }
@@ -65,7 +65,7 @@ class InterfacesCalculatorImplTest {
         interfacesMetricsDto = this.interfacesCalculator.calculate(
                ChildOfClassThatImplementsOneInterfaceButImplementsNoNewInterfaces.class);
 
-        assertEquals(interfacesMetricsDto.getNumberOfInterfacesImplemented(), 0);
-        assertEquals(interfacesMetricsDto.getInterfacesImplemented().size(), 0);
+        assertEquals(0, interfacesMetricsDto.getNumberOfInterfacesImplemented());
+        assertEquals(0, interfacesMetricsDto.getInterfacesImplemented().size());
     }
 }

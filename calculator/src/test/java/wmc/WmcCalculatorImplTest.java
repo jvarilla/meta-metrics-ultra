@@ -7,7 +7,7 @@ import wmc.testclasses.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Wmc Calculator Test")
+@DisplayName("Wmc Calculator")
 class WmcCalculatorImplTest {
     private WmcCalculator wmcCalculator;
 
@@ -21,9 +21,9 @@ class WmcCalculatorImplTest {
     void calculateWmcWithNoMethods() {
         WmcMetricsDto results = this.wmcCalculator.calculate(NoMethodClass.class);
 
-        assertEquals(results.getValue(), 1);
-        assertEquals(results.getNumberOfConstructors(), 1);
-        assertEquals(results.getNumberOfMethods().getTotalMethods(), 0);
+        assertEquals(1, results.getValue());
+        assertEquals(1, results.getNumberOfConstructors());
+        assertEquals(0, results.getNumberOfMethods().getTotalMethods());
     }
 
     @Test
@@ -31,9 +31,9 @@ class WmcCalculatorImplTest {
     void calculateWmcWithOneMethod() {
         WmcMetricsDto results = this.wmcCalculator.calculate(OneMethodClass.class);
 
-        assertEquals(results.getValue(), 2);
-        assertEquals(results.getNumberOfConstructors(), 1);
-        assertEquals(results.getNumberOfMethods().getTotalMethods(), 1);
+        assertEquals(2, results.getValue());
+        assertEquals(1, results.getNumberOfConstructors());
+        assertEquals(1, results.getNumberOfMethods().getTotalMethods());
     }
 
     @Test
@@ -43,13 +43,13 @@ class WmcCalculatorImplTest {
         WmcMetricsDto results =
                 this.wmcCalculator.calculate(OneMethodOfEachOfAccessibilityModifierClass.class);
 
-        assertEquals(results.getValue(), 5);
-        assertEquals(results.getNumberOfConstructors(), 1);
-        assertEquals(results.getNumberOfMethods().getTotalMethods(), 4);
-        assertEquals(results.getNumberOfMethods().getPublicMethods(), 1);
-        assertEquals(results.getNumberOfMethods().getProtectedMethods(), 1);
-        assertEquals(results.getNumberOfMethods().getPrivateMethods(), 1);
-        assertEquals(results.getNumberOfMethods().getPackagePrivateMethods(), 1);
+        assertEquals(5, results.getValue());
+        assertEquals(1, results.getNumberOfConstructors());
+        assertEquals(4, results.getNumberOfMethods().getTotalMethods());
+        assertEquals(1, results.getNumberOfMethods().getPublicMethods());
+        assertEquals(1, results.getNumberOfMethods().getProtectedMethods());
+        assertEquals(1, results.getNumberOfMethods().getPrivateMethods());
+        assertEquals(1, results.getNumberOfMethods().getPackagePrivateMethods());
     }
 
     @Test
@@ -58,10 +58,10 @@ class WmcCalculatorImplTest {
         WmcMetricsDto results =
                 this.wmcCalculator.calculate(OneStaticMethodClass.class);
 
-        assertEquals(results.getValue(), 2);
-        assertEquals(results.getNumberOfConstructors(), 1);
-        assertEquals(results.getNumberOfMethods().getTotalMethods(), 1);
-        assertEquals(results.getNumberOfMethods().getStaticMethods(), 1);
+        assertEquals(2, results.getValue());
+        assertEquals(1, results.getNumberOfConstructors());
+        assertEquals(1, results.getNumberOfMethods().getTotalMethods());
+        assertEquals(1, results.getNumberOfMethods().getStaticMethods());
     }
 
     @Test
@@ -69,9 +69,9 @@ class WmcCalculatorImplTest {
     void calculateWmcWithMultipleConstructors() {
         WmcMetricsDto results = this.wmcCalculator.calculate(MultipleConstructorClass.class);
 
-        assertEquals(results.getValue(), 2);
-        assertEquals(results.getNumberOfConstructors(), 2);
-        assertEquals(results.getNumberOfMethods().getTotalMethods(), 0);
+        assertEquals(2, results.getValue());
+        assertEquals(2, results.getNumberOfConstructors());
+        assertEquals(0, results.getNumberOfMethods().getTotalMethods());
     }
 
     @Test
@@ -79,9 +79,9 @@ class WmcCalculatorImplTest {
     void calculateWmcWithLambdaMethod() {
         WmcMetricsDto results = this.wmcCalculator.calculate(LambdaMethodClass.class);
 
-        assertEquals(results.getValue(), 1);
-        assertEquals(results.getNumberOfConstructors(), 1);
-        assertEquals(results.getNumberOfMethods().getTotalMethods(), 0);
+        assertEquals(1, results.getValue());
+        assertEquals(1, results.getNumberOfConstructors());
+        assertEquals(0, results.getNumberOfMethods().getTotalMethods());
     }
 
 
