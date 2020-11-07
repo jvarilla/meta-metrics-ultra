@@ -9,7 +9,7 @@
     "avgDit": 0.5,
     "avgWmc": 3.625,
     "avgNumFields": 2.125,
-    "avgRFC": 52.5
+    "avgRFC": 44.125
   },
   "classes": [
     {
@@ -29,21 +29,23 @@
           "privateMethods": 0,
           "protectedMethods": 0,
           "publicMethods": 2,
+          "packagePrivateMethods": 0,
           "staticMethods": 0
         }
       },
       "numFields": {
         "totalFields": 1,
         "privateFields": 1,
+        "packagePrivateFields": 0,
         "protectedFields": 0,
         "publicFields": 0,
         "staticFields": 0
       },
       "rfc": {
-        "total": 2,
+        "total": 83,
         "methodsFromCurrentClass": 2,
-        "methodsFromFieldObjects": 0,
-        "methodsInherited": 0,
+        "methodsFromFieldObjects": 77,
+        "methodsInherited": 4,
         "numberOfFieldObjects": 1
       },
       "interfaces": {
@@ -65,22 +67,24 @@
           "privateMethods": 0,
           "protectedMethods": 0,
           "publicMethods": 1,
+          "packagePrivateMethods": 0,
           "staticMethods": 0
         }
       },
       "numFields": {
         "totalFields": 2,
         "privateFields": 0,
+        "packagePrivateFields": 0,
         "protectedFields": 0,
         "publicFields": 2,
         "staticFields": 0
       },
       "rfc": {
-        "total": 87,
+        "total": 47,
         "methodsFromCurrentClass": 1,
-        "methodsFromFieldObjects": 86,
+        "methodsFromFieldObjects": 46,
         "methodsInherited": 0,
-        "numberOfFieldObjects": 2
+        "numberOfFieldObjects": 1
       },
       "interfaces": {
         "numberOfInterfacesImplemented": 0,
@@ -103,20 +107,22 @@
           "privateMethods": 0,
           "protectedMethods": 0,
           "publicMethods": 3,
+          "packagePrivateMethods": 0,
           "staticMethods": 2
         }
       },
       "numFields": {
         "totalFields": 7,
         "privateFields": 2,
+        "packagePrivateFields": 0,
         "protectedFields": 0,
         "publicFields": 5,
         "staticFields": 6
       },
       "rfc": {
-        "total": 231,
+        "total": 108,
         "methodsFromCurrentClass": 3,
-        "methodsFromFieldObjects": 215,
+        "methodsFromFieldObjects": 92,
         "methodsInherited": 13,
         "numberOfFieldObjects": 7
       },
@@ -141,22 +147,24 @@
           "privateMethods": 0,
           "protectedMethods": 0,
           "publicMethods": 2,
+          "packagePrivateMethods": 0,
           "staticMethods": 0
         }
       },
       "numFields": {
         "totalFields": 2,
         "privateFields": 2,
+        "packagePrivateFields": 0,
         "protectedFields": 0,
         "publicFields": 0,
         "staticFields": 0
       },
       "rfc": {
-        "total": 2,
+        "total": 4,
         "methodsFromCurrentClass": 2,
         "methodsFromFieldObjects": 0,
-        "methodsInherited": 0,
-        "numberOfFieldObjects": 2
+        "methodsInherited": 2,
+        "numberOfFieldObjects": 0
       },
       "interfaces": {
         "numberOfInterfacesImplemented": 0,
@@ -177,20 +185,22 @@
           "privateMethods": 0,
           "protectedMethods": 0,
           "publicMethods": 7,
+          "packagePrivateMethods": 0,
           "staticMethods": 1
         }
       },
       "numFields": {
         "totalFields": 2,
         "privateFields": 0,
+        "packagePrivateFields": 2,
         "protectedFields": 0,
         "publicFields": 0,
         "staticFields": 0
       },
       "rfc": {
-        "total": 7,
+        "total": 99,
         "methodsFromCurrentClass": 7,
-        "methodsFromFieldObjects": 0,
+        "methodsFromFieldObjects": 92,
         "methodsInherited": 0,
         "numberOfFieldObjects": 2
       },
@@ -213,12 +223,14 @@
           "privateMethods": 0,
           "protectedMethods": 0,
           "publicMethods": 3,
+          "packagePrivateMethods": 0,
           "staticMethods": 3
         }
       },
       "numFields": {
         "totalFields": 0,
         "privateFields": 0,
+        "packagePrivateFields": 0,
         "protectedFields": 0,
         "publicFields": 0,
         "staticFields": 0
@@ -249,12 +261,14 @@
           "privateMethods": 0,
           "protectedMethods": 0,
           "publicMethods": 2,
+          "packagePrivateMethods": 0,
           "staticMethods": 0
         }
       },
       "numFields": {
         "totalFields": 1,
         "privateFields": 1,
+        "packagePrivateFields": 0,
         "protectedFields": 0,
         "publicFields": 0,
         "staticFields": 0
@@ -264,7 +278,7 @@
         "methodsFromCurrentClass": 2,
         "methodsFromFieldObjects": 0,
         "methodsInherited": 0,
-        "numberOfFieldObjects": 1
+        "numberOfFieldObjects": 0
       },
       "interfaces": {
         "numberOfInterfacesImplemented": 0,
@@ -285,22 +299,24 @@
           "privateMethods": 0,
           "protectedMethods": 0,
           "publicMethods": 0,
+          "packagePrivateMethods": 0,
           "staticMethods": 0
         }
       },
       "numFields": {
         "totalFields": 2,
         "privateFields": 0,
+        "packagePrivateFields": 0,
         "protectedFields": 0,
         "publicFields": 2,
         "staticFields": 1
       },
       "rfc": {
-        "total": 86,
+        "total": 7,
         "methodsFromCurrentClass": 0,
-        "methodsFromFieldObjects": 86,
+        "methodsFromFieldObjects": 7,
         "methodsInherited": 0,
-        "numberOfFieldObjects": 2
+        "numberOfFieldObjects": 1
       },
       "interfaces": {
         "numberOfInterfacesImplemented": 0,

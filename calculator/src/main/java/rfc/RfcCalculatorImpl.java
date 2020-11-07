@@ -42,8 +42,6 @@ public class RfcCalculatorImpl implements RfcCalculator {
         int numInheritedMethods = this.ditCalculator.getAncestors(theClass).stream()
                 .map(ancestor -> {
                     try {
-                        System.out.println("Ancestor: " + ancestor);
-                        System.out.println("Class of ancestor: " + ancestor.getName());
                         return ancestor.getDeclaredMethods().length;
                     } catch (Exception e) {
                         return 0;
