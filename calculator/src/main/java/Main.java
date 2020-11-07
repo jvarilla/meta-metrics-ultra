@@ -75,11 +75,12 @@ public class Main {
         File resultsFile = new File(targetSaveLocation);
         try {
             resultsFile.createNewFile();
-            FileWriter fileWriter = new FileWriter(resultsFile);
-            String results = gson.toJson(metricsResultsDto, MetricsResultsDto.class);
+            try (FileWriter fileWriter = new FileWriter(resultsFile)) {
+                String results = gson.toJson(metricsResultsDto, MetricsResultsDto.class);
 
-            fileWriter.write(results);
-            fileWriter.close();
+                fileWriter.write(results);
+                fileWriter.close();
+            }
             return true;
 
         } catch (IOException e) {

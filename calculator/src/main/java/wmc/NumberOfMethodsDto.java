@@ -5,18 +5,8 @@ public class NumberOfMethodsDto {
     private int privateMethods;
     private int protectedMethods;
     private int publicMethods;
+    private int packagePrivateMethods;
     private int staticMethods;
-
-    public NumberOfMethodsDto(int totalMethods, int privateMethods, int protectedMethods, int publicMethods, int staticMethods) {
-        this.totalMethods = totalMethods;
-        this.privateMethods = privateMethods;
-        this.protectedMethods = protectedMethods;
-        this.publicMethods = publicMethods;
-        this.staticMethods = staticMethods;
-    }
-
-    public NumberOfMethodsDto() {
-    }
 
     public int getTotalMethods() {
         return totalMethods;
@@ -50,22 +40,19 @@ public class NumberOfMethodsDto {
         this.publicMethods = publicMethods;
     }
 
+    public int getPackagePrivateMethods() {
+        return packagePrivateMethods;
+    }
+
+    public void setPackagePrivateMethods(int packagePrivateMethods) {
+        this.packagePrivateMethods = packagePrivateMethods;
+    }
+
     public int getStaticMethods() {
         return staticMethods;
     }
 
     public void setStaticMethods(int staticMethods) {
         this.staticMethods = staticMethods;
-    }
-
-    @Override
-    public String toString() {
-        return "NumberOfMethodsDto{" +
-                "totalNumberOfMethods=" + totalMethods +
-                ", totalPrivateMethods=" + privateMethods +
-                ", totalProtectedMethods=" + protectedMethods +
-                ", totalPublicMethods=" + publicMethods +
-                ", totalStaticMethods=" + staticMethods +
-                '}';
     }
 }

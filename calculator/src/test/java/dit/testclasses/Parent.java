@@ -1,4 +1,4 @@
-package testclasses;
+package dit.testclasses;
 
 public class Parent {
 }

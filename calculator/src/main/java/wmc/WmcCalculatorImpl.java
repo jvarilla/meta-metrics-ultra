@@ -41,6 +41,8 @@ public class WmcCalculatorImpl implements WmcCalculator {
         numberOfMethodsDto
                 .setPrivateMethods(countNumMethodsWithCondition(classToAnalyze,privateMethodsCondition));
 
+        numberOfMethodsDto.setPackagePrivateMethods(this.getNumberOfPackagePrivateMethods(numberOfMethodsDto));
+
         numberOfMethodsDto
                 .setStaticMethods(countNumMethodsWithCondition(classToAnalyze,staticMethodsCondition));
 
@@ -56,5 +58,10 @@ public class WmcCalculatorImpl implements WmcCalculator {
     public Method[] getEligibleMethods(Class theClass) {
         Predicate<Method> noLambdasFilter = method -> !method.getName().contains("lambda");
         return Arrays.stream(theClass.getDeclaredMethods()).filter(noLambdasFilter).toArray(Method[]::new);
+    }
+
+    private int getNumberOfPackagePrivateMethods(NumberOfMethodsDto numberOfMethodsDto) {
+        return numberOfMethodsDto.getTotalMethods() - numberOfMethodsDto.getPrivateMethods()
+                - numberOfMethodsDto.getProtectedMethods() - numberOfMethodsDto.getPublicMethods();
     }
 }

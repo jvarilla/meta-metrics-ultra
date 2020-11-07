@@ -1,9 +1,11 @@
 package dit;
 
+import dit.testclasses.ChildOne;
+import dit.testclasses.GrandChildOne;
+import dit.testclasses.Parent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import testclasses.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
