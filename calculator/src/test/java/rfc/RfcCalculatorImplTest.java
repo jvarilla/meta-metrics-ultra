@@ -95,4 +95,17 @@ class RfcCalculatorImplTest {
         assertEquals(0, rfcMetricsDto.getMethodsInherited());
         assertEquals(2, rfcMetricsDto.getNumberOfFieldObjects());
     }
+
+    @Test
+    @DisplayName("Should not double count methods from multiple fields of the same type")
+    void calculateRfcForClassWithTwoFieldObjOfTheSameType() {
+        RfcMetricsDto rfcMetricsDto = this.rfcCalculator.calculate(
+                ClassWithTwoOfTheSameFieldObj.class);
+
+        assertEquals(1, rfcMetricsDto.getTotal());
+        assertEquals(0, rfcMetricsDto.getMethodsFromCurrentClass());
+        assertEquals(1, rfcMetricsDto.getMethodsFromFieldObjects());
+        assertEquals(0, rfcMetricsDto.getMethodsInherited());
+        assertEquals(2, rfcMetricsDto.getNumberOfFieldObjects());
+    }
 }

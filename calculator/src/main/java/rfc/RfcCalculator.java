@@ -1,5 +1,5 @@
 package rfc;
 
 public interface RfcCalculator {
-    RfcMetricsDto calculate(Class<?> theClass);
+    RfcMetricsDto calculate(Class<?> clazz);
 }
