@@ -13,6 +13,9 @@ import java.util.stream.Collectors;
 
 public class ClassPathManagerAdapterImpl implements ClassPathManagerAdapter {
     private List<Class<?>> loadedClasses;
+    private List<Class<?>> loadedEnums;
+    private List<Class<?>> loadedInterfaces;
+
     private ImmutableSet<ClassPath.ClassInfo> classesOfThisProject;
 
     public ClassPathManagerAdapterImpl() {
@@ -22,19 +25,29 @@ public class ClassPathManagerAdapterImpl implements ClassPathManagerAdapter {
     @Override
     public boolean loadClasses(String pathToBinFolder) {
         try {
-//            File file = new File("C:\\Users\\jvari\\ProjectsJ\\SE433\\poc\\build\\classes\\java\\main");
             this.classesOfThisProject =
                     ClassPath.from(getClass().getClassLoader()).getAllClasses();
+
             File binDirectory = new File(pathToBinFolder);
             ClassLoader classLoader = new URLClassLoader(new URL[] {binDirectory .toURI().toURL()});
-            getClass().getClassLoader();
+
             ImmutableSet<ClassPath.ClassInfo> classInfos = ClassPath.from(classLoader).getAllClasses();
             List<ClassPath.ClassInfo> classInfoList = classInfos.asList();
 
-
-            this.loadedClasses = classInfoList.stream().filter(classInfo -> {
+            List<Class<?>> allLoadedJavaCode = classInfoList.stream().filter(classInfo -> {
                 return !this.classesOfThisProject.contains(classInfo);
-            }).map(ClassPath.ClassInfo::load).filter(clazz -> !clazz.isInterface() && !clazz.isEnum()).collect(Collectors.toList());
+            }).map(ClassPath.ClassInfo::load).collect(Collectors.toList());
+
+            this.loadedClasses = allLoadedJavaCode.stream().filter(clazz -> {
+                return !clazz.isInterface() && !clazz.isEnum();
+            }).collect(Collectors.toList());
+
+            this.loadedEnums = allLoadedJavaCode.stream().filter(Class::isEnum)
+                                    .collect(Collectors.toList());
+
+            this.loadedInterfaces = allLoadedJavaCode.stream().filter(Class::isInterface)
+                                    .collect(Collectors.toList());
+
             return true;
 
         } catch (Exception exception) {
@@ -45,5 +58,15 @@ public class ClassPathManagerAdapterImpl implements ClassPathManagerAdapter {
     @Override
     public List<Class<?>> getClasses() {
         return this.loadedClasses;
+    }
+
+    @Override
+    public List<Class<?>> getEnums() {
+        return this.loadedEnums;
+    }
+
+    @Override
+    public List<Class<?>> getInterfaces() {
+        return this.loadedInterfaces;
     }
 }
