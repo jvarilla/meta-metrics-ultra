@@ -42,6 +42,11 @@ class ClassMetricsCalculatorImplTest {
             public DitMetricsDto calculate(Class classToAnalyze) {
                 return new DitMetricsDto();
             }
+
+            @Override
+            public List<Class<?>> getAncestors(Class<?> clazz) {
+                return null;
+            }
         };
         this.mockInterfacesCalculator = new InterfacesCalculator() {
             @Override
