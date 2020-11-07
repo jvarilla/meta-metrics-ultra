@@ -74,6 +74,16 @@ class WmcCalculatorImplTest {
         assertEquals(results.getNumberOfMethods().getTotalMethods(), 0);
     }
 
+    @Test
+    @DisplayName("Should exclude lambdas from wmc count")
+    void calculateWmcWithLambdaMethod() {
+        WmcMetricsDto results = this.wmcCalculator.calculate(LambdaMethodClass.class);
+
+        assertEquals(results.getValue(), 1);
+        assertEquals(results.getNumberOfConstructors(), 1);
+        assertEquals(results.getNumberOfMethods().getTotalMethods(), 0);
+    }
+
 
 
 }
