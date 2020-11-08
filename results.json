@@ -1,15 +1,15 @@
 {
   "summary": {
-    "pathToSrc": "../shopping/src",
-    "pathToBin": "../shopping/bin",
+    "pathToSrc": "C:\\Users\\jvari\\ProjectsJ\\SE433\\finalProject\\calculator\\..\\shopping\\src",
+    "pathToBin": "C:\\Users\\jvari\\ProjectsJ\\SE433\\finalProject\\calculator\\..\\shopping\\bin",
     "loc": 155,
     "numberOfFiles": 8,
-    "numberOfClasses": 8,
+    "numberOfClasses": 7,
     "numberOfInterfaceImplementations": 0,
-    "avgDit": 0.5,
-    "avgWmc": 3.625,
-    "avgNumFields": 2.125,
-    "avgRFC": 36.875
+    "avgDit": 0.42857142857142855,
+    "avgWmc": 3.7142857142857144,
+    "avgNumFields": 1.4285714285714286,
+    "avgRFC": 28.428571428571427
   },
   "classes": [
     {
@@ -85,46 +85,6 @@
         "methodsFromFieldObjects": 46,
         "methodsInherited": 0,
         "numberOfFieldObjects": 1
-      },
-      "interfaces": {
-        "numberOfInterfacesImplemented": 0,
-        "interfacesImplemented": []
-      }
-    },
-    {
-      "className": "shopping.CMenu",
-      "dit": {
-        "value": 1,
-        "ancestors": [
-          "java.lang.Enum"
-        ]
-      },
-      "wmc": {
-        "value": 3,
-        "numberOfConstructors": 0,
-        "numberOfMethods": {
-          "totalMethods": 3,
-          "privateMethods": 0,
-          "protectedMethods": 0,
-          "publicMethods": 3,
-          "packagePrivateMethods": 0,
-          "staticMethods": 2
-        }
-      },
-      "numFields": {
-        "totalFields": 7,
-        "privateFields": 2,
-        "packagePrivateFields": 0,
-        "protectedFields": 0,
-        "publicFields": 5,
-        "staticFields": 6
-      },
-      "rfc": {
-        "total": 96,
-        "methodsFromCurrentClass": 3,
-        "methodsFromFieldObjects": 80,
-        "methodsInherited": 13,
-        "numberOfFieldObjects": 7
       },
       "interfaces": {
         "numberOfInterfacesImplemented": 0,
