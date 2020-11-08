@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-apply plugin: 'java-library'
+apply plugin: 'java'
 
 test {
     useJUnitPlatform()
@@ -18,9 +18,31 @@ repositories {
 }
 
 dependencies {
-    api("com.google.guava:guava:29.0-jre")
-    implementation 'com.google.code.gson:gson:2.8.6'
+    compile "com.google.guava:guava:29.0-jre"
+    compile 'com.google.code.gson:gson:2.8.6'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }
 
+jar {
+    manifest {
+        attributes "Main-Class": "meta.metrics.Main"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+task fatJar(type: Jar) {
+    manifest.from jar.manifest
+    classifier = 'all'
+    from {
+        configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) }
+    } {
+        exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+    }
+    with jar
+}
