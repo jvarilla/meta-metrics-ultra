@@ -4,7 +4,6 @@ import meta.metrics.wmc.testclasses.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import meta.metrics.wmc.testclasses.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,7 +17,7 @@ class WmcCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.wmc for a class with no method and one constructor")
+    @DisplayName("Should calculate Wmc Metrics for a class with no method and one constructor")
     void calculateWmcWithNoMethods() {
         WmcMetricsDto results = this.wmcCalculator.calculate(NoMethodClass.class);
 
@@ -28,7 +27,7 @@ class WmcCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.wmc for a class with one method and one constructor")
+    @DisplayName("Should calculate Wmc Metrics for a class with one method and one constructor")
     void calculateWmcWithOneMethod() {
         WmcMetricsDto results = this.wmcCalculator.calculate(OneMethodClass.class);
 
@@ -38,7 +37,7 @@ class WmcCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.wmc for a class with one method of each of 4 modifiers " +
+    @DisplayName("Should calculate Wmc Metrics for a class with one method of each of 4 modifiers " +
             "type and one constructor")
     void calculateWmcWithOneMethodOfEachAccessibilityModifiers() {
         WmcMetricsDto results =
@@ -54,7 +53,7 @@ class WmcCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.wmc for a class with one static method and one constructor")
+    @DisplayName("Should calculate Wmc Metrics for a class with one static method and one constructor")
     void calculateWmcWithOneStaticMethod() {
         WmcMetricsDto results =
                 this.wmcCalculator.calculate(OneStaticMethodClass.class);
@@ -66,7 +65,7 @@ class WmcCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.wmc for a class with multiple constructors")
+    @DisplayName("Should calculate Wmc Metrics for a class with multiple constructors")
     void calculateWmcWithMultipleConstructors() {
         WmcMetricsDto results = this.wmcCalculator.calculate(MultipleConstructorClass.class);
 
@@ -76,7 +75,7 @@ class WmcCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should exclude lambdas from varilla.joseph.wmc count")
+    @DisplayName("Should exclude lambdas from wmc count")
     void calculateWmcWithLambdaMethod() {
         WmcMetricsDto results = this.wmcCalculator.calculate(LambdaMethodClass.class);
 

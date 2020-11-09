@@ -19,7 +19,7 @@ class NumFieldsCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate field metrics for class with no fields")
+    @DisplayName("Should calculate NumFields metrics for class with no fields")
     void calculateNoFields() {
         NumFieldsDto results = this.numFieldsCalculator.calculate(NoFieldsClass.class);
 
@@ -27,7 +27,7 @@ class NumFieldsCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate field metrics for class with one static field")
+    @DisplayName("Should calculate NumFields metrics for class with one static field")
     void calculateOneStaticFields() {
         NumFieldsDto results = this.numFieldsCalculator.calculate(OneStaticFieldClass.class);
 
@@ -36,7 +36,7 @@ class NumFieldsCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate field metrics for class with one field of " +
+    @DisplayName("Should calculate NumFields metrics for class with one field of " +
             "with one of each accessibility modifier")
     void calculateOneOfEachAccessibilityModifierFields() {
         NumFieldsDto results = this.numFieldsCalculator.calculate(

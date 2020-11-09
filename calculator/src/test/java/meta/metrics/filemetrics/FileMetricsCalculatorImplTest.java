@@ -22,7 +22,7 @@ class FileMetricsCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate file metrics for file with one line of non-blank line and no comments")
+    @DisplayName("Should calculate File metrics for file with one line of non-blank line and no comments")
     void calculateFileWithOneFullLineNoComments() {
         ClassLoader classLoader = getClass().getClassLoader();
         File classWithOneFullLineAndNoComments = new File(

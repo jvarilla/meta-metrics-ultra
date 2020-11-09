@@ -91,7 +91,7 @@ class ClassMetricsCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate class metrics for empty list of classes")
+    @DisplayName("Should calculate Class metrics for empty list of classes")
     void calculateClassMetricsForEmptyClassList() {
         List<Class<?>> clazzes = new ArrayList<>();
 
@@ -102,7 +102,7 @@ class ClassMetricsCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate class metrics for list of one class")
+    @DisplayName("Should calculate Class metrics for list of one class")
     void calculateClassMetricsForClassListOfOne() {
         List<Class<?>> clazzes = new ArrayList<>();
         clazzes.add(TestClass1.class);
@@ -123,7 +123,7 @@ class ClassMetricsCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate class metrics for list of multiple classes")
+    @DisplayName("Should calculate Class metrics for list of multiple classes")
     void calculateClassMetricsForListOfMultipleClasses() {
         List<Class<?>> clazzes = new ArrayList<>();
         clazzes.add(TestClass1.class);

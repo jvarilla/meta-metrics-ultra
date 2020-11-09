@@ -22,7 +22,7 @@ class InterfacesCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.interfaces for class that implements no varilla.joseph.interfaces")
+    @DisplayName("Should calculate Interfaces metrics for class that implements no varilla.joseph.interfaces")
     void calculateNoInterfaces() {
         InterfacesMetricsDto interfacesMetricsDto;
         interfacesMetricsDto = this.interfacesCalculator.calculate(ClassThatImplementsNoInterfaces.class);
@@ -32,7 +32,7 @@ class InterfacesCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.interfaces for class that implements one varilla.joseph.interfaces")
+    @DisplayName("Should calculate Interfaces metrics for class that implements one varilla.joseph.interfaces")
     void calculateOneInterface() {
         String interfaceAName = InterfaceA.class.getName();
         InterfacesMetricsDto interfacesMetricsDto;
@@ -44,7 +44,7 @@ class InterfacesCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.interfaces for class that implements multiple varilla.joseph.interfaces")
+    @DisplayName("Should calculate Interfaces metrics for class that implements multiple varilla.joseph.interfaces")
     void calculateMultipleInterface() {
         String interfaceAName = InterfaceA.class.getName();
         String interfaceBName = InterfaceB.class.getName();
@@ -59,7 +59,7 @@ class InterfacesCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should not calculate varilla.joseph.interfaces implemented in the parent of a class")
+    @DisplayName("Should not calculate Interfaces metrics implemented in the parent of a class")
     void calculateOneInheritedInterface() {
         InterfacesMetricsDto interfacesMetricsDto;
         interfacesMetricsDto = this.interfacesCalculator.calculate(

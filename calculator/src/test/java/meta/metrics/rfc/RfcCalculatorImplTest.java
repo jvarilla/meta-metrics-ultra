@@ -18,7 +18,7 @@ class RfcCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.rfc metrics for class with no methods")
+    @DisplayName("Should calculate Rfc metrics for class with no methods")
     void calculateRfcForClassWithNoMethods() {
         RfcMetricsDto rfcMetricsDto = this.rfcCalculator.calculate(ClassWithNoMethods.class);
 
@@ -30,7 +30,7 @@ class RfcCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.rfc metrics for class with one method")
+    @DisplayName("Should calculate Rfc metrics for class with one method")
     void calculateRfcForClassWithOneMethod() {
         RfcMetricsDto rfcMetricsDto = this.rfcCalculator.calculate(ClassWithOneMethod.class);
 
@@ -42,7 +42,7 @@ class RfcCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.rfc metrics for class that inherits one method but has no " +
+    @DisplayName("Should calculate Rfc metrics for class that inherits one method but has no " +
             "declared methods of its own")
     void calculateRfcForClassWithOneInheritedAndNoDeclaredMethods() {
         RfcMetricsDto rfcMetricsDto = this.rfcCalculator.calculate(
@@ -56,7 +56,7 @@ class RfcCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.rfc metrics for class that inherits one method and has one " +
+    @DisplayName("Should calculate Rfc metrics for class that inherits one method and has one " +
             "declared methods of its own")
     void calculateRfcForClassWithOneInheritedAndOneDeclaredMethods() {
         RfcMetricsDto rfcMetricsDto = this.rfcCalculator.calculate(
@@ -70,7 +70,7 @@ class RfcCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.rfc metrics for class that inherits two methods and has one " +
+    @DisplayName("Should calculate Rfc metrics for class that inherits two methods and has one " +
             "declared methods of its own and has one field obj with one method")
     void calculateRfcForClassWithTwoInheritedAndOneDeclaredAndOneFieldObjMethod() {
         RfcMetricsDto rfcMetricsDto = this.rfcCalculator.calculate(
@@ -84,7 +84,7 @@ class RfcCalculatorImplTest {
     }
 
     @Test
-    @DisplayName("Should calculate varilla.joseph.rfc metrics for class that has three field obj methods " +
+    @DisplayName("Should calculate Rfc metrics  for class that has three field obj methods " +
             "from two field objs")
     void calculateRfcForClassWithThreeFieldObjMethods() {
         RfcMetricsDto rfcMetricsDto = this.rfcCalculator.calculate(
