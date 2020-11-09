@@ -19,6 +19,7 @@ import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import LargeTitle from './components/LargeTitle/LargeTitle';
 import Texts from './components/Texts/Texts';
 import MetricsAll from './components/MetricsAll/MetricsAll';
+import Summary from './components/Summary/Summary';
 
 class App extends React.Component {
   render(){
@@ -55,7 +56,10 @@ class App extends React.Component {
               <div class="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12">
                   <Breadcrumbs />
                   <LargeTitle name="Metrics Summary"/>
-                  <Texts text="Summary for store application"/>
+                  <Texts text="Metrics Summary for store application"/>
+                  <div class="row">
+                  <Summary/>
+                  </div>
               </div>
               </div>
             </div>
