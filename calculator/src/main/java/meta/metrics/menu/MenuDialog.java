@@ -24,7 +24,7 @@ public class MenuDialog {
     public void endMenuDialog(String filePath) {
         println("");
         println(String.format("Your results are available at: %s", filePath));
-        println("Upload the json file to the web app to visualize your results");
+        println("You can see your results on a web application");
     }
 
     public String waitForResponse(String question) {
