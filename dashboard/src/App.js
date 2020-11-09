@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -11,6 +12,9 @@ import PieCharts from './components/PieCharts/PieCharts';
 import BarCharts from './components/BarCharts/BarCharts';
 import metricsData from './metricsData';
 import Navigation from './components/Navigation/Navigation';
+import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
+import LargeTitle from './components/LargeTitle/LargeTitle';
+import Texts from './components/Texts/Texts';
 
 class App extends React.Component {
   render(){
@@ -39,7 +43,18 @@ class App extends React.Component {
     </div>
    </Route>
          <Route path="/dashboard">
-            <h3>Test json: {metricsData.summary.pathToSrc}</h3>
+            <div class="container-fluid">
+              <div class="row">
+                 <div class="left-menu col-md-3 col-xl-3 col-sm-12 col-xs-12 bd-sidebar d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                  red
+              </div>
+              <div class="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12">
+                  <Breadcrumbs />
+                  <LargeTitle name="Metrics Summary"/>
+                  <Texts text="Summary for store application"/>
+              </div>
+              </div>
+            </div>
          </Route>
         // <Route path="/dashboard/:item">
            

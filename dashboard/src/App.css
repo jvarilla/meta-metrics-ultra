@@ -1,1 +1,13 @@
 @import './variables.css';
+
+
+.bd-sidebar{
+	flex: 0 1 320px;
+	position: sticky;
+	top: 0rem;
+	z-index: 1000;
+	height: calc(100vh - 0rem);
+	border-right: 1px solid rgba(0,0,0,.1);
+	order: 0;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
