@@ -1,5 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -15,6 +18,7 @@ import Navigation from './components/Navigation/Navigation';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import LargeTitle from './components/LargeTitle/LargeTitle';
 import Texts from './components/Texts/Texts';
+import MetricsAll from './components/MetricsAll/MetricsAll';
 
 class App extends React.Component {
   render(){
@@ -46,7 +50,7 @@ class App extends React.Component {
             <div class="container-fluid">
               <div class="row">
                  <div class="left-menu col-md-3 col-xl-3 col-sm-12 col-xs-12 bd-sidebar d-none d-sm-none d-md-block d-lg-block d-xl-block">
-                  red
+                  <MetricsAll/>
               </div>
               <div class="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12">
                   <Breadcrumbs />
@@ -63,6 +67,8 @@ class App extends React.Component {
       </Router>
   );
   }
+
+
 }
 
 export default App;
