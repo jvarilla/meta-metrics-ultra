@@ -2,6 +2,7 @@ package shopping;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -12,8 +13,8 @@ public class Main {
 		}
 	}
 	
-	public static void addCart(Scanner s) {
-		Tarjet.i.checkItems();
+	public static void addCart(Scanner s, Tarjet t) {
+		t.i.checkItems();
 		s.nextInt();
 	}
 	
@@ -21,7 +22,8 @@ public class Main {
 		Tarjet t = new Tarjet();
 		int i;
 		Scanner s = new Scanner(System.in);
-		//ArrayList q = Tarjet.i.products;
+		ArrayList<Product> q = t.i.products;
+		Cart c = new Cart();
 		CMenu[] menu = CMenu.values();
 		
 		do {
@@ -29,7 +31,7 @@ public class Main {
 			showMenu(menu);
 			i = s.nextInt();
 			if(i == 0) {
-				addCart(s);
+				addCart(s, t);
 			}
 			
 		}while(i != 4);

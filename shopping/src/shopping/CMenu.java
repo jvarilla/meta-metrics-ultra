@@ -1,7 +1,7 @@
 package shopping;
 
 public enum CMenu {
-	Add("Add to Cart"), Remove("Remove from Cart"), Buy("Buy items in cart"), Show("Show items and total"),Exit("exit");
+	Add("Add to Cart"), Remove("Remove from Cart"), Buy("Buy items in cart"), Show("Show items and total"),Admin("Admin Menu"), Exit("exit");
 	
 	private String description;
 	

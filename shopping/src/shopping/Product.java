@@ -1,6 +1,6 @@
 package shopping;
 
-public class Product {
+public class Product implements Item{
 	private double price;
 
 	public Product(double p) {
