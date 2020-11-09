@@ -13,13 +13,17 @@ process.stdin.pipe(calculatorProcess.stdin);
 calculatorProcess.stdout.pipe(process.stdout);
 
 calculatorProcess.on('exit', () => {
-	console.log("Visit localhost:8080");
+	console.log("\n\nVisit http://localhost:8080");
 	console.log("Press ctrl + C to exit");
 	startStaticFileServer();
 });
 
 const startStaticFileServer = () => {
 	http.createServer((req, res) => {
+		if (req.url === '/' || req.url === '') {
+			req.url = 'index.html';
+		}
+
 		fs.readFile(__dirname + '/public/' + req.url, (err,data) => {
 		  if (err) {
 			res.writeHead(404);
