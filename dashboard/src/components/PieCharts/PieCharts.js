@@ -28,8 +28,8 @@ class PieCharts extends Component{
 			<div>
 			<h2>{this.props.title}</h2>
 			<PieChart width={300} height={300}>
-        		<Pie data={data01} dataKey="value" cx={100} cy={100} outerRadius={60} fill="#000000" />
-        		<Pie data={data02} dataKey="value" cx={100} cy={100} innerRadius={70} outerRadius={90} fill="#234543" label />
+        		<Pie data={data01} dataKey="value" cx={100} cy={100} outerRadius={60} fill="#0005D4" />
+        		<Pie data={data02} dataKey="value" cx={100} cy={100} innerRadius={70} outerRadius={90} fill="#000493" label />
       		</PieChart>
       		</div>
 		);
