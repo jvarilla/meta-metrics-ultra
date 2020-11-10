@@ -1,7 +1,4 @@
 import React, {useState,useEffect} from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { fab } from "@fortawesome/free-brands-svg-icons";
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -10,6 +7,7 @@ import {
   Link,
   useParams
 } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PieCharts from './components/PieCharts/PieCharts';
 import BarCharts from './components/BarCharts/BarCharts';
 import Navigation from './components/Navigation/Navigation';
@@ -46,19 +44,16 @@ class App extends React.Component {
         <Route exact path="/">
           <div className="container">
             <div className="row">
-              <div className="col-md-6 col-sm-12">
-               <div className="card">
-                <div className="card-body">
-                  <PieCharts/>
-                </div>
-              </div>  
-            </div>
-            <div className="col-md-6 col-sm-12">
-              <div className="card">
-                <div className="card-body">
-                  <BarCharts/>
-                </div>
+              <div className="col-md-12 col-sm-12 topDiv">
+                <img className="upload-logo img-fluid mx-auto d-block" src={process.env.PUBLIC_URL + '/images/logo-sm-horizontal.png'} /> 
               </div>
+              <div className="col-md-12 col-sm-12">
+              <div className="progress">
+                  <div className="progress-bar w-100" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Click Upload to View Methods</div>
+              </div>
+              </div>
+              <div className="col-md-12 col-sm-12 mx-auto button-container">
+                 <a className="btn btn-primary btn-lg upload-button" href="/dashboard" role="button"><FontAwesomeIcon icon="cloud-upload-alt" />&nbsp; Upload</a>
               </div>
             </div>
           </div>

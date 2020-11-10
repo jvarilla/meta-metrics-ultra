@@ -5,7 +5,7 @@ class Navigation extends Component{
 	render(){
 		return(
       <div>
-<nav className="navbar navbar-expand-lg navbar-light bg-light">
+<nav className="navbar navbar-expand-lg navbar-light">
     <div className="d-flex flex-grow-1">
         <a className="navbar-brand" href="/">
             <img src={process.env.PUBLIC_URL + "/images/logo-symbol.png"} width="30" height="30" alt="" loading="lazy"></img> Meta Metrics

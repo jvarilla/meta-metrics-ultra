@@ -1,5 +1,12 @@
 @import './variables.css';
 
+body{
+	background-color: var(--bodyColor) !important;
+}
+
+nav{
+	background-color: var(--white);
+}
 
 .bd-sidebar{
 	flex: 0 1 320px;
@@ -11,3 +18,64 @@
 	order: 0;
 	border-bottom: 1px solid rgba(0,0,0,.1);
 }
+
+.topDiv{
+	margin-top: 200.9px;
+	height: 150px;
+}
+
+.upload-logo{
+	max-height: 75%;
+}
+
+div.progress{
+	height: 60px;
+	border: 1px solid var(--darkGray);
+	background: var(--white);
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+/* init bar before upload */
+div.progress-bar{
+	background: var(--white);
+	color: var(--blueColor);
+}
+
+/* gradient */
+div.progress-bar-background{
+	 background: rgb(0,0,98);
+	 background: linear-gradient(90deg, rgba(0,0,98,1) 0%, rgba(23,23,191,1) 50%, rgba(255,255,255,1) 100%); 
+}
+
+a.upload-button{
+	text-align: center;
+	width: 100%;
+	padding: 15px 0px 15px 0px;
+	margin-top: 30px;
+	background: var(--blueColor);
+	transition: background .2s linear;
+	color: var(--white);
+	font-weight: bold;
+}
+
+a.upload-button:hover{
+	background: var(--darkBlue);
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 768px){
+	.topDiv{
+      margin-top: 319px;
+	}
+	a.upload-button{
+		width:328px;
+	}
+
+	.button-container{
+		display: flex;
+		justify-content: center;
+		position: relative;
+		margin-top: 5px;
+	}
+}
+

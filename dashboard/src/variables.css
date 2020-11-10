@@ -1,5 +1,15 @@
 /* globals */
 :root{
   /* colors */
-  
+  --darkBlue: #000062;
+  --blueColor: #1717BF;
+  --white: #ffffff;
+  --grayBackground: #F8F8F8;
+  --darkGray: #707070;
+  --bodyColor: #F0F0F0;
+
+  --screen-sm-min: 576px;
+  --screen-md-min: 768px;
+  --screen-lg-min: 992px;
+  --screen-xl-min: 1200px;
 }
