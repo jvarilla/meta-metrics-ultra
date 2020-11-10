@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 class Texts extends Component{
 	render(){
 		return(
-      <div>
-       <p>{this.props.text}</p>
-</div>
+      	<div>
+      		 <p>{this.props.text}</p>
+		</div>
 		);
 	}
 }
