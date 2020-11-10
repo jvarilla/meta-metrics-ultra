@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -58,15 +57,14 @@ class App extends React.Component {
                   <LargeTitle name="Metrics Summary"/>
                   <Texts text="Metrics Summary for store application"/>
                   <div class="row">
-                  <Summary/>
+                    <Summary/>
                   </div>
               </div>
               </div>
             </div>
          </Route>
-        // <Route path="/dashboard/:item">
-           
-        // </Route>
+        <Route path="/dashboard/:item">
+        </Route>
       </Switch>
       </Router>
   );

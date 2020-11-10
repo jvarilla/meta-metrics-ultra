@@ -1,13 +1,4 @@
-//const dataUrl = "../../app/results.json";
-//const dataUrl = "../results.json";
-
-/*const metricsData = async() => {
-    await fetch(dataUrl).then(response => response.json())
-    .then(data => {
-      data;
-    });
-};*/
-const metricsData = {
+{
   "summary": {
     "pathToSrc": "C:\\Users\\jvari\\ProjectsJ\\SE433\\finalProject\\app\\..\\shopping\\src",
     "pathToBin": "C:\\Users\\jvari\\ProjectsJ\\SE433\\finalProject\\app\\..\\shopping\\bin",
@@ -293,7 +284,4 @@ const metricsData = {
       }
     }
   ]
-};
-
-export default metricsData;
-
+}
