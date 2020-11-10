@@ -18,24 +18,18 @@ calculatorProcess.on('exit', () => {
 	startStaticFileServer();
 });
 
+
+const express = require('express');
+const path = require('path');
+const app = express();
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 const startStaticFileServer = () => {
-	http.createServer((req, res) => {
-		if (req.url === '/' || req.url === '') {
-			req.url = 'index.html';
-		}
-
-		fs.readFile(__dirname + '/public/' + req.url, (err,data) => {
-		  if (err) {
-			res.writeHead(404);
-			res.end(JSON.stringify(err));
-			return;
-		  }
-		  res.writeHead(200);
-		  res.end(data);
-		});
-	  }).listen(8080);
+	app.listen(8080);
 }
-
-
-
 

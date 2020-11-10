@@ -2,14 +2,14 @@
   "summary": {
     "pathToSrc": "C:\\Users\\jvari\\ProjectsJ\\SE433\\finalProject\\app\\..\\shopping\\src",
     "pathToBin": "C:\\Users\\jvari\\ProjectsJ\\SE433\\finalProject\\app\\..\\shopping\\bin",
-    "loc": 293,
-    "numberOfFiles": 15,
-    "numberOfClasses": 12,
-    "numberOfInterfaceImplementations": 1,
-    "avgDit": 0.8333333333333334,
-    "avgWmc": 3.75,
-    "avgNumFields": 1.6666666666666667,
-    "avgRFC": 56.833333333333336
+    "loc": 155,
+    "numberOfFiles": 8,
+    "numberOfClasses": 7,
+    "numberOfInterfaceImplementations": 0,
+    "avgDit": 0.42857142857142855,
+    "avgWmc": 3.7142857142857144,
+    "avgNumFields": 1.4285714285714286,
+    "avgRFC": 28.428571428571427
   },
   "classes": [
     {
@@ -60,13 +60,13 @@
         "ancestors": []
       },
       "wmc": {
-        "value": 5,
+        "value": 2,
         "numberOfConstructors": 1,
         "numberOfMethods": {
-          "totalMethods": 4,
+          "totalMethods": 1,
           "privateMethods": 0,
           "protectedMethods": 0,
-          "publicMethods": 4,
+          "publicMethods": 1,
           "packagePrivateMethods": 0,
           "staticMethods": 0
         }
@@ -80,129 +80,10 @@
         "staticFields": 0
       },
       "rfc": {
-        "total": 50,
-        "methodsFromCurrentClass": 4,
+        "total": 47,
+        "methodsFromCurrentClass": 1,
         "methodsFromFieldObjects": 46,
         "methodsInherited": 0,
-        "numberOfFieldObjects": 1
-      },
-      "interfaces": {
-        "numberOfInterfacesImplemented": 0,
-        "interfacesImplemented": []
-      }
-    },
-    {
-      "className": "shopping.Console",
-      "dit": {
-        "value": 2,
-        "ancestors": [
-          "shopping.Electronic",
-          "shopping.Product"
-        ]
-      },
-      "wmc": {
-        "value": 2,
-        "numberOfConstructors": 2,
-        "numberOfMethods": {
-          "totalMethods": 0,
-          "privateMethods": 0,
-          "protectedMethods": 0,
-          "publicMethods": 0,
-          "packagePrivateMethods": 0,
-          "staticMethods": 0
-        }
-      },
-      "numFields": {
-        "totalFields": 1,
-        "privateFields": 0,
-        "packagePrivateFields": 0,
-        "protectedFields": 0,
-        "publicFields": 1,
-        "staticFields": 0
-      },
-      "rfc": {
-        "total": 79,
-        "methodsFromCurrentClass": 0,
-        "methodsFromFieldObjects": 77,
-        "methodsInherited": 2,
-        "numberOfFieldObjects": 1
-      },
-      "interfaces": {
-        "numberOfInterfacesImplemented": 0,
-        "interfacesImplemented": []
-      }
-    },
-    {
-      "className": "shopping.Customer",
-      "dit": {
-        "value": 0,
-        "ancestors": []
-      },
-      "wmc": {
-        "value": 3,
-        "numberOfConstructors": 1,
-        "numberOfMethods": {
-          "totalMethods": 2,
-          "privateMethods": 0,
-          "protectedMethods": 0,
-          "publicMethods": 2,
-          "packagePrivateMethods": 0,
-          "staticMethods": 0
-        }
-      },
-      "numFields": {
-        "totalFields": 2,
-        "privateFields": 0,
-        "packagePrivateFields": 2,
-        "protectedFields": 0,
-        "publicFields": 0,
-        "staticFields": 0
-      },
-      "rfc": {
-        "total": 83,
-        "methodsFromCurrentClass": 2,
-        "methodsFromFieldObjects": 81,
-        "methodsInherited": 0,
-        "numberOfFieldObjects": 2
-      },
-      "interfaces": {
-        "numberOfInterfacesImplemented": 0,
-        "interfacesImplemented": []
-      }
-    },
-    {
-      "className": "shopping.Electronic",
-      "dit": {
-        "value": 1,
-        "ancestors": [
-          "shopping.Product"
-        ]
-      },
-      "wmc": {
-        "value": 2,
-        "numberOfConstructors": 2,
-        "numberOfMethods": {
-          "totalMethods": 0,
-          "privateMethods": 0,
-          "protectedMethods": 0,
-          "publicMethods": 0,
-          "packagePrivateMethods": 0,
-          "staticMethods": 0
-        }
-      },
-      "numFields": {
-        "totalFields": 1,
-        "privateFields": 0,
-        "packagePrivateFields": 1,
-        "protectedFields": 0,
-        "publicFields": 0,
-        "staticFields": 0
-      },
-      "rfc": {
-        "total": 79,
-        "methodsFromCurrentClass": 0,
-        "methodsFromFieldObjects": 77,
-        "methodsInherited": 2,
         "numberOfFieldObjects": 1
       },
       "interfaces": {
@@ -360,10 +241,8 @@
         "numberOfFieldObjects": 0
       },
       "interfaces": {
-        "numberOfInterfacesImplemented": 1,
-        "interfacesImplemented": [
-          "shopping.Item"
-        ]
+        "numberOfInterfacesImplemented": 0,
+        "interfacesImplemented": []
       }
     },
     {
@@ -373,90 +252,8 @@
         "ancestors": []
       },
       "wmc": {
-        "value": 5,
-        "numberOfConstructors": 2,
-        "numberOfMethods": {
-          "totalMethods": 3,
-          "privateMethods": 0,
-          "protectedMethods": 0,
-          "publicMethods": 3,
-          "packagePrivateMethods": 0,
-          "staticMethods": 0
-        }
-      },
-      "numFields": {
-        "totalFields": 3,
-        "privateFields": 1,
-        "packagePrivateFields": 0,
-        "protectedFields": 0,
-        "publicFields": 2,
-        "staticFields": 0
-      },
-      "rfc": {
-        "total": 87,
-        "methodsFromCurrentClass": 3,
-        "methodsFromFieldObjects": 84,
-        "methodsInherited": 0,
-        "numberOfFieldObjects": 2
-      },
-      "interfaces": {
-        "numberOfInterfacesImplemented": 0,
-        "interfacesImplemented": []
-      }
-    },
-    {
-      "className": "shopping.Wood",
-      "dit": {
         "value": 1,
-        "ancestors": [
-          "shopping.Product"
-        ]
-      },
-      "wmc": {
-        "value": 3,
-        "numberOfConstructors": 2,
-        "numberOfMethods": {
-          "totalMethods": 1,
-          "privateMethods": 0,
-          "protectedMethods": 0,
-          "publicMethods": 1,
-          "packagePrivateMethods": 0,
-          "staticMethods": 0
-        }
-      },
-      "numFields": {
-        "totalFields": 3,
-        "privateFields": 0,
-        "packagePrivateFields": 0,
-        "protectedFields": 0,
-        "publicFields": 3,
-        "staticFields": 0
-      },
-      "rfc": {
-        "total": 80,
-        "methodsFromCurrentClass": 1,
-        "methodsFromFieldObjects": 77,
-        "methodsInherited": 2,
-        "numberOfFieldObjects": 2
-      },
-      "interfaces": {
-        "numberOfInterfacesImplemented": 0,
-        "interfacesImplemented": []
-      }
-    },
-    {
-      "className": "shopping.Xbox",
-      "dit": {
-        "value": 3,
-        "ancestors": [
-          "shopping.Console",
-          "shopping.Electronic",
-          "shopping.Product"
-        ]
-      },
-      "wmc": {
-        "value": 2,
-        "numberOfConstructors": 2,
+        "numberOfConstructors": 1,
         "numberOfMethods": {
           "totalMethods": 0,
           "privateMethods": 0,
@@ -472,13 +269,13 @@
         "packagePrivateFields": 0,
         "protectedFields": 0,
         "publicFields": 2,
-        "staticFields": 0
+        "staticFields": 1
       },
       "rfc": {
-        "total": 79,
+        "total": 7,
         "methodsFromCurrentClass": 0,
-        "methodsFromFieldObjects": 77,
-        "methodsInherited": 2,
+        "methodsFromFieldObjects": 7,
+        "methodsInherited": 0,
         "numberOfFieldObjects": 1
       },
       "interfaces": {
