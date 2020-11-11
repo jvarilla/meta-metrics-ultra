@@ -17,6 +17,7 @@ import Texts from './components/Texts/Texts';
 import MetricsAll from './components/MetricsAll/MetricsAll';
 import Summary from './components/Summary/Summary';
 import ClassMetrics from './components/ClassMetrics/ClassMetrics';
+import MobileMetricsMenu from './components/MobileMetricsMenu/MobileMetricsMenu';
 
 class App extends React.Component {
   constructor() {
@@ -63,6 +64,9 @@ class App extends React.Component {
             <div className="row">
               <div className="left-menu col-md-3 col-xl-3 col-sm-12 col-xs-12 bd-sidebar d-none d-sm-none d-md-block d-lg-block d-xl-block">
                 <MetricsAll metricsData={this.state.metricsData}/>
+              </div>
+              <div class="col-sm-12 com-xs-12 d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
+                <MobileMetricsMenu metricsData={this.state.metricsData} />
               </div>
               <div className="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12">
                 <Breadcrumbs />

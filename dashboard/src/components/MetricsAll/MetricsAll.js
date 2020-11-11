@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Texts from '../../components/Texts/Texts';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import './MetricsAll.css';
 
 class MetricsAll extends Component{
 	render(){
@@ -13,7 +14,7 @@ class MetricsAll extends Component{
 						 {this.props.metricsData.classes.map((v, i) => 
 							 <a href={"/metrics/classes/"+i} key={"class"+i} className="list-group-item list-group-item-action">{v.className}</a>
 						 )}
-				  </div>
+				    </div> 
 				</div>);
 		} else {
 			return(
