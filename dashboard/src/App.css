@@ -27,6 +27,18 @@ nav{
 	background-color: var(--grayBackground);
 }
 
+.bd-sidebar2{
+flex: 0 1 320px;
+	position: sticky;
+	top: 0rem;
+	z-index: 1000;
+	height: calc(100vh - 0rem);
+	border-right: 1px solid rgba(0,0,0,.1);
+	order: 0;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	background-color: var(--grayBackground);
+}
+
 .topDiv{
 	margin-top: 200.9px;
 	height: 150px;

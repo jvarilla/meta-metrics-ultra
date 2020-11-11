@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
+import MetricsAll from '../MetricsAll/MetricsAll';
+import MobileMetricsMenu from '../MobileMetricsMenu/MobileMetricsMenu';
+import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
+import LargeTitle from '../LargeTitle/LargeTitle';
+import Texts from '../Texts/Texts';
+import Summary from '../Summary/Summary';
+
 
 class ClassMetrics extends Component {
     render() {
-        if (this.props.classMetrics) {
+        if (this.props.metricsData) {
             return (
-                <div>
-                    <h1>
-                        {this.props.classMetrics.className}
-                    </h1>
-                    <h3>Ancestors:</h3>
-                    <ol>
-                        {this.props.classMetrics.dit.ancestors.map(((v, i) => {
-                            return (<li key={i}>{ v.toString() }</li> )
-                        }))}
-                    </ol>
-                   
+                <div>  
+                   <h1>test</h1>
                 </div>
             )
         } else {

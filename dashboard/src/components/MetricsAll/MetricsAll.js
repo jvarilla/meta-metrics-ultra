@@ -6,6 +6,7 @@ import './MetricsAll.css';
 
 class MetricsAll extends Component{
 	render(){
+		console.log(this.props.metricsData);
 		if (this.props.metricsData) {
 			return(
 				<div>
