@@ -45,10 +45,6 @@ button.navbar-toggler{
 	background: red;
 }
 
-.nav-item{
-  
-}
-
 .nav-item a{
 	height: 100px;
 	justify-content: center;
@@ -72,6 +68,7 @@ button.navbar-toggler{
 
 .nav-link{
 	color: var(--white) !important;
+	padding: 0px 0px;
 }
 
 a.nav-link.active{
@@ -84,5 +81,17 @@ a.nav-link.active{
 
 /* Desktop Styles */
 @media screen and (min-width: 768px){
-	
+ .nav-item a{
+	height: 76px;
+	font-size: 12px;
+ }
+
+ .nav-item a i, .nav-item a svg{
+	font-size: 25px;
+ }
+
+ a.nav-link{
+	color: var(--white) !important;
+	padding: 0px 15px !important;
+}
 }
