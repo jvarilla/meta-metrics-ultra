@@ -32,7 +32,7 @@ export default class Example extends PureComponent {
       <PieChart width={300} height={250}>
         <Pie
           data={data}
-          cx={140}
+          cx={150}
           cy={100}
           labelLine={false}
           label={renderCustomizedLabel}

@@ -41,7 +41,7 @@ class Summary extends Component{
                 }else{
                     const chartData = [
                         {name: k, value: parseFloat(this.props.metricsData.summary[k].toFixed(3))},
-                        {name: "Starting Value", value: 1}
+                        {name: "Starting Value", value: 1.00}
                     ];
                     console.log();
                     return(
