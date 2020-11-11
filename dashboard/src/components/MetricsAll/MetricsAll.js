@@ -9,10 +9,10 @@ class MetricsAll extends Component{
 		if (this.props.metricsData) {
 			return(
 				<div>
-				<Texts text="All Metrics"/>
+				<div className="text-center pt-3"><Texts text="All Metrics"/></div>
 					 <div className="list-group">
 						 {this.props.metricsData.classes.map((v, i) => 
-							 <a href={"/metrics/classes/"+i} key={"class"+i} className="list-group-item list-group-item-action">{v.className}</a>
+							 <a href={"/metrics/classes/"+i} key={"class"+i} className="list-group-item list-group-item-action"><FontAwesomeIcon icon="chart-bar" />&nbsp;{v.className}</a>
 						 )}
 				    </div> 
 				</div>);

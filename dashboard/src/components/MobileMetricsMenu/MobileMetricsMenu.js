@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import './MobileMetricsMenu.css';
+import Texts from "../Texts/Texts";
 
 class MobileMetricsMenu extends Component{
    render(){
@@ -13,8 +14,9 @@ class MobileMetricsMenu extends Component{
     			View All Metrics
   			</a>
   			<div class="dropdown-menu mobileDropdownMenu">
+  			<div class="text-center"><Texts text="All Metrics"/></div>
 				{this.props.metricsData.classes.map((v, i) => 
-						<a href={"/metrics/classes/"+i} key={"class"+i} className="dropdown-item">{v.className}</a>
+					<a href={"/metrics/classes/"+i} key={"class"+i} className="dropdown-item"><FontAwesomeIcon icon="chart-bar" />&nbsp;{v.className}</a>
 				)}
   			</div>
   			</div>
