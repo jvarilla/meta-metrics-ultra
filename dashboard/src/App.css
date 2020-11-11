@@ -32,7 +32,7 @@ div.progress{
 	height: 73px;
 	border: 1px solid var(--darkGray);
 	background: var(--white);
-	box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.16);
 }
 
 /* init bar before upload */

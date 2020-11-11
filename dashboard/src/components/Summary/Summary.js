@@ -14,7 +14,7 @@ class Summary extends Component{
                 <div className="card">
                 <div className="card-body">
                     <div>
-                        <BarCharts title={k}/>
+                        <BarCharts title={k} className="title"/>
                     </div>
                 </div>
             </div>
