@@ -29,7 +29,7 @@ nav{
 }
 
 div.progress{
-	height: 60px;
+	height: 73px;
 	border: 1px solid var(--darkGray);
 	background: var(--white);
 	box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
@@ -50,7 +50,7 @@ div.progress-bar-background{
 a.upload-button{
 	text-align: center;
 	width: 100%;
-	padding: 15px 0px 15px 0px;
+	padding: 20px 0px;
 	margin-top: 30px;
 	background: var(--blueColor);
 	transition: background .2s linear;
