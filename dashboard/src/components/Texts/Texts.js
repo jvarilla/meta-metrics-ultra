@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-//import './LargeTitle.css';
+import './Texts.css';
 
 class Texts extends Component{
 	render(){
 		return(
       	<div>
-      		 <p>{this.props.text}</p>
+      		 <p className="texts-paragraph">{this.props.text}</p>
 		</div>
 		);
 	}
