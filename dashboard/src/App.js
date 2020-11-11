@@ -65,7 +65,7 @@ class App extends React.Component {
               <div className="left-menu col-md-3 col-xl-3 col-sm-12 col-xs-12 bd-sidebar d-none d-sm-none d-md-block d-lg-block d-xl-block">
                 <MetricsAll metricsData={this.state.metricsData}/>
               </div>
-              <div class="col-sm-12 com-xs-12 d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
+              <div className="col-sm-12 com-xs-12 d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
                 <MobileMetricsMenu metricsData={this.state.metricsData} />
               </div>
               <div className="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12">
@@ -79,21 +79,10 @@ class App extends React.Component {
             </div>
           </div>
         </Route>
-        <Route path="/metrics/classes/:id">
-            <div className="container-fluid">
-               <div className="row">
-                  <div className="left-menu col-md-3 col-xl-3 col-sm-12 col-xs-12 bd-sidebar2 d-none d-sm-none d-md-block d-lg-block d-xl-block">
-                    <MetricsAll metricsData={this.state.metricsData}/>
-                  </div>
-                  <div className="col-sm-12 com-xs-12 d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
-                    <MobileMetricsMenu metricsData={this.state.metricsData} />
-                  </div>
-                  <div className="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12">
-                    <ClassMetrics metricsData={this.state.metricsData} />
-                </div>
-               </div>
-            </div>
-        </Route>
+        <Route path="/metrics/classes/:id" render={({match}) => (
+          <ClassMetrics metricsData={this.state.metricsData} classMetrics={this.state.metricsData.classes[match.params.id]} />
+        )}>
+    </Route>
       </Switch>
       </Router>
   );
