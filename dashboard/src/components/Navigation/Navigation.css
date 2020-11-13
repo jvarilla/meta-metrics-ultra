@@ -38,7 +38,7 @@ button.navbar-toggler{
 	margin-top: 0px;
 	background: var(--white);
 	width: 100%;
-	z-index: 1000;
+	z-index: 3000;
 }
 
 #mobile-menu.nav-item{

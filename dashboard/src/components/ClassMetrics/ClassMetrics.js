@@ -5,11 +5,28 @@ import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
 import LargeTitle from '../LargeTitle/LargeTitle';
 import Texts from '../Texts/Texts';
 import Summary from '../Summary/Summary';
+import PieCharts from '../PieCharts/PieCharts';
+import BarCharts from '../BarCharts/BarCharts';
+import SimplePieChart from '../SimplePieChart/SimplePieChart';
 
 
 class ClassMetrics extends Component {
     render() {
         if (this.props.classMetrics) {
+            const metrics = this.props.classMetrics;
+
+            // ancestors for DIT
+            const ancestors = metrics.dit.ancestors.map((k, v) => {
+                return {name: k, value: 1};
+            });
+
+            // wmc
+            const wmc = Object.keys(metrics.wmc.numberOfMethods).map((k,v) => {
+                 return {name: k +" - "+metrics.wmc.numberOfMethods[k], value: metrics.wmc.numberOfMethods[k]};
+            });
+
+            console.log(wmc);
+
             return (
                 <div>  
                    <div className="container-fluid">
@@ -22,12 +39,39 @@ class ClassMetrics extends Component {
                   </div>
                   <div className="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12">
                    <LargeTitle name={this.props.classMetrics.className}/>
-                    <h3>Ancestors:</h3>
-                    <ol>
-                        {this.props.classMetrics.dit.ancestors.map(((v, i) => {
-                            return (<li key={i}>{ v.toString() }</li> )
-                        }))}
-                    </ol>
+                   <div className="row">
+                   <div className="col-lg-4 col-md-6 col-sm-12">
+                    <div className="card">
+                        <div className="card-body">
+                            <div>
+                            <h2>DIT</h2>
+                                <div className="alert alert-secondary" role="alert">
+                                    <Texts text={"DIT Value: "+metrics.dit.value}/>
+                                </div>
+                                
+                                <PieCharts title="Ancestors" dataForChart={ancestors}/>
+                             </div>
+                            </div>
+                        </div>
+                   </div>
+
+                   <div className="col-lg-4 col-md-6 col-sm-12">
+                    <div className="card">
+                        <div className="card-body">
+                            <div>
+                            <h2>WMC</h2>
+                                <div className="alert alert-secondary" role="alert">
+                                    <Texts text={"WMC Value: "+metrics.wmc.value}/>
+                                    <Texts text={"# of Constructors: "+metrics.wmc.numberOfConstructors}/>
+                                </div>
+                                
+                                <SimplePieChart title="Number of Methods" metricsData={wmc}/>
+                             </div>
+                            </div>
+                        </div>
+                   </div>
+
+                  </div>
                   </div>
                </div>
             </div>

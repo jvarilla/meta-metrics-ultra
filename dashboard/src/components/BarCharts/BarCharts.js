@@ -3,7 +3,7 @@ import {
   BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
-const data = [
+/*const data = [
   {
     name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
   },
@@ -25,18 +25,19 @@ const data = [
   {
     name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
   },
-];
+];*/
 
 class BarCharts extends Component {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/90v76x08/';
 
   render() {
+    const data = this.props.metricsData;
     return (
       <div>
       <h2>{this.props.title}</h2>
       <BarChart
         width={300}
-        height={300}
+        height={250}
         data={data}
         margin={{
           top: 20, right: 30, left: 20, bottom: 5,
