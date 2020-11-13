@@ -29,7 +29,7 @@ export default class Example extends PureComponent {
     return (
     <div>
     <h2>{this.props.title}</h2>
-      <PieChart width={300} height={250}>
+      <PieChart width={300} height={260}>
         <Pie
           data={data}
           cx={150}

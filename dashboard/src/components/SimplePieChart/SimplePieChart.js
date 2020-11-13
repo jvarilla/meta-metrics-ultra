@@ -1,20 +1,50 @@
 import React, { PureComponent } from 'react';
 import {
-  PieChart, Pie, Legend, Tooltip,
+  PieChart, Pie, Sector, Cell, Legend
 } from 'recharts';
 
+const COLORS = ['#1717BF', '#000062', '#707070', '#000036'];
+
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabel = ({
+  cx, cy, midAngle, innerRadius, outerRadius, percent, index,
+}) => {
+   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+      {`${percent.toFixed(2)}`}
+    </text>
+  );
+
+};
+
 export default class Example extends PureComponent {
-  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/k9jkog04/';
+  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/c9pL8k61/';
 
   render() {
     const data = this.props.metricsData;
     return (
-      <div>
-      <h2>{this.props.title}</h2>
-      <PieChart width={300} height={385}>
-        <Pie dataKey="value" isAnimationActive={false} data={data} cx={150} cy={120} outerRadius={80} fill="#1717BF" label />
-        <Tooltip />
-        <Legend/>
+    <div>
+    <h2>{this.props.title}</h2>
+      <PieChart width={300} height={380}>
+        <Pie
+          data={data}
+          cx={150}
+          cy={100}
+          labelLine={false}
+          label={renderCustomizedLabel}
+          outerRadius={80}
+          fill="#8884d8"
+          dataKey="value"
+        >
+          {
+            data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+          }
+        </Pie>
+        <Legend />
       </PieChart>
       </div>
     );

@@ -25,7 +25,20 @@ class ClassMetrics extends Component {
                  return {name: k +" - "+metrics.wmc.numberOfMethods[k], value: metrics.wmc.numberOfMethods[k]};
             });
 
-            console.log(wmc);
+            //num of fields
+            const nof = Object.keys(metrics.numFields).map((k,v) => {
+                 return {name: k +" - "+metrics.numFields[k], value: metrics.numFields[k]};
+            });
+
+            // rfc
+            const rfc = Object.keys(metrics.rfc).map((k,v) => {
+                 return {name: k +" - "+metrics.rfc[k], value: metrics.rfc[k]};
+            });
+
+            // interfaces
+            const ifc = Object.keys(metrics.interfaces).map((k,v) => {
+                 return {name: k +" - "+metrics.interfaces[k], value: metrics.interfaces[k] + 0.0001};
+            });
 
             return (
                 <div>  
@@ -39,6 +52,7 @@ class ClassMetrics extends Component {
                   </div>
                   <div className="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12">
                    <LargeTitle name={this.props.classMetrics.className}/>
+                   <Texts text="Here are the individual metrics for each class below. Feedback is available below for each metric on the classes available."/>
                    <div className="row">
                    <div className="col-lg-4 col-md-6 col-sm-12">
                     <div className="card">
@@ -71,6 +85,36 @@ class ClassMetrics extends Component {
                         </div>
                    </div>
 
+                   <div className="col-lg-4 col-md-6 col-sm-12">
+                    <div className="card">
+                        <div className="card-body">
+                            <div>
+                                <SimplePieChart title="Number of Fields" metricsData={nof}/>
+                             </div>
+                            </div>
+                        </div>
+                   </div>
+
+                   <div className="col-lg-4 col-md-6 col-sm-12">
+                    <div className="card">
+                        <div className="card-body">
+                            <div>
+                                <SimplePieChart title="RFC" metricsData={rfc}/>
+                             </div>
+                            </div>
+                        </div>
+                   </div>
+
+                   <div className="col-lg-4 col-md-6 col-sm-12">
+                    <div className="card">
+                        <div className="card-body">
+                            <div>
+                                <PieCharts title="Interfaces" dataForChart={ifc}/>
+                             </div>
+                            </div>
+                        </div>
+                   </div>
+
                   </div>
                   </div>
                </div>
@@ -80,7 +124,7 @@ class ClassMetrics extends Component {
         } else {
             return (
                 <div>
-                    No Class Found... 
+                    Loading... 
                 </div>
             )
         }
