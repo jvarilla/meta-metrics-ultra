@@ -1,1 +1,6 @@
  @import '../../variables.css';
+
+ .alert{
+ 	border: 1px solid var(--darkGray);
+ 	background-color: var(--white) !important;
+ }

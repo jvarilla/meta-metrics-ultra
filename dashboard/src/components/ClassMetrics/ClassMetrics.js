@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './ClassMetrics.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MetricsAll from '../MetricsAll/MetricsAll';
 import MobileMetricsMenu from '../MobileMetricsMenu/MobileMetricsMenu';
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
@@ -8,6 +10,7 @@ import Summary from '../Summary/Summary';
 import PieCharts from '../PieCharts/PieCharts';
 import BarCharts from '../BarCharts/BarCharts';
 import SimplePieChart from '../SimplePieChart/SimplePieChart';
+import Rating from '../Rating/Rating';
 
 
 class ClassMetrics extends Component {
@@ -58,9 +61,11 @@ class ClassMetrics extends Component {
                     <div className="card">
                         <div className="card-body">
                             <div>
-                            <h2>DIT</h2>
+                            <h2>DIT (Depth of Inheritance)</h2>
                                 <div className="alert alert-secondary" role="alert">
                                     <Texts text={"DIT Value: "+metrics.dit.value}/>
+                                    <b><Rating list={ancestors} r1={0} r2={4} num={metrics.dit.value} />&nbsp; Feedback</b>
+                                    <p>The Depth of inheritance measures the maximum number of steps from the class node to the root of the inheritance.</p>
                                 </div>
                                 
                                 <PieCharts title="Ancestors" dataForChart={ancestors}/>

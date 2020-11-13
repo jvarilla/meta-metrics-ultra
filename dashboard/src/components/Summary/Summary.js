@@ -40,8 +40,8 @@ class Summary extends Component{
          );
                 }else{
                     const chartData = [
-                        {name: k, value: parseFloat(this.props.metricsData.summary[k].toFixed(3))},
-                        {name: "Starting Value", value: 1.00}
+                        {name: k +" - "+parseFloat(this.props.metricsData.summary[k].toFixed(2)), value: parseFloat(this.props.metricsData.summary[k].toFixed(3))},
+                        {name: "Initial", value: 1}
                     ];
                     console.log();
                     return(
