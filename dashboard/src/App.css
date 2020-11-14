@@ -51,7 +51,7 @@ flex: 0 1 320px;
 div.progress{
 	height: 73px;
 	border: 1px solid var(--darkGray);
-	background: var(--white);
+	/*background: var(--white);*/
 	box-shadow: 2px 2px 4px rgba(0,0,0,0.16);
 }
 

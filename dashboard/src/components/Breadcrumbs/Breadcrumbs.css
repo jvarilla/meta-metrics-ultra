@@ -7,8 +7,12 @@
  	font-size: 16px;
  }
 
-.breadcrumb-item.active{
+.breadcrumb-item a{
 	color: var(--darkBlue) !important;
+}
+
+.breadcrumb-item.active a{
+	color: var(--blueColor) !important;
  	text-decoration: underline;
  }
 

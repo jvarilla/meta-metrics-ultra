@@ -22,7 +22,7 @@ class Navigation extends Component{
     <div className="collapse navbar-collapse text-center" id="mobile-menu">
         <ul className="navbar-nav ml-auto flex-nowrap nav-pills">
             <li className="nav-item">
-                <NavLink to="/" activeClassName="active" className="nav-link"><FontAwesomeIcon icon="upload" />&nbsp; Upload</NavLink>
+                <NavLink to="/" activeClassName="active" className="nav-link"><FontAwesomeIcon icon="info-circle" />&nbsp; Information</NavLink>
             </li>
             <li className="nav-item">
                 <NavLink to="/dashboard" activeClassName="active" className="nav-link"><FontAwesomeIcon icon="align-left" />&nbsp; Summary</NavLink>

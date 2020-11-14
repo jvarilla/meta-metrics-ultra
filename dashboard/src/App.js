@@ -33,11 +33,12 @@ class App extends React.Component {
       .then((data) => {
         //console.log(data);
         this.setState({'metricsData': data});
-        console.log('state:', this.state.metricsData);
+        //console.log('state:', this.state.metricsData);
       });
   }
 
   render(){
+    
     return (
       <Router>
       <Navigation/>
@@ -49,12 +50,12 @@ class App extends React.Component {
                 <img className="upload-logo img-fluid mx-auto d-block" src={process.env.PUBLIC_URL + '/images/logo-sm-horizontal.png'} /> 
               </div>
               <div className="col-md-12 col-sm-12">
-              <div className="progress">
-                  <div className="progress-bar w-100" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Click Upload to View Methods</div>
+              <div className="alert alert-secondary" role="alert">
+                <p><FontAwesomeIcon icon="info-circle" />&nbsp;Meta Metrics Software will showcase information about the quality of your application. Please click <b>View Results</b> to see feedback information.</p> 
               </div>
               </div>
               <div className="col-md-12 col-sm-12 mx-auto button-container">
-                 <a className="btn btn-primary btn-lg upload-button" href="/dashboard" role="button"><FontAwesomeIcon icon="cloud-upload-alt" />&nbsp; Upload</a>
+                 <a className="btn btn-primary btn-lg upload-button" href="/dashboard" role="button"><FontAwesomeIcon icon="chart-bar" />&nbsp; View Results</a>
               </div>
             </div>
           </div>
@@ -62,17 +63,25 @@ class App extends React.Component {
         <Route path="/dashboard">
           <div className="container-fluid">
             <div className="row">
-              <div className="left-menu col-md-3 col-xl-3 col-sm-12 col-xs-12 bd-sidebar d-none d-sm-none d-md-block d-lg-block d-xl-block">
+              <div className="left-menu col-md-2 col-xl-2 col-sm-12 col-xs-12 bd-sidebar d-none d-sm-none d-md-block d-lg-block d-xl-block">
                 <MetricsAll metricsData={this.state.metricsData}/>
               </div>
               <div className="col-sm-12 com-xs-12 d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
                 <MobileMetricsMenu metricsData={this.state.metricsData} />
               </div>
-              <div className="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12">
+              <div className="metrics-summary col-xl-10 col-md-10 col-sm-12 col-xs-12">
                 <Breadcrumbs />
                 <LargeTitle name="Metrics Summary"/>
                 <p><FontAwesomeIcon icon="info-circle" />&nbsp;Metrics Summary for store application</p>
+                
                 <div className="row">
+                <div className="col-xl-12 col-md-12 col-sm-12 col-xs-12">
+                <div className="alert alert-secondary text-center" role="alert">
+                         <h5>Metrics Summary Legend</h5>
+                         <p><FontAwesomeIcon icon="thumbs-up" /> - Metric meet standards for CK Metrics Recommendations</p>
+                         <p><FontAwesomeIcon icon="thumbs-down" /> - DOES NOT Metric meet standards for CK Metrics Recommendations</p>
+               </div>
+               </div>
                     <Summary metricsData={this.state.metricsData} />
                   </div>
               </div>

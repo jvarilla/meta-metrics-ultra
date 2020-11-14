@@ -16,14 +16,13 @@ class Rating extends Component{
               return(
                  <FontAwesomeIcon icon="thumbs-up" />
              );
+
             }else{
               return(
                <FontAwesomeIcon icon="thumbs-down" />
              );
             }
         }
-       
-        
     }
 }
 

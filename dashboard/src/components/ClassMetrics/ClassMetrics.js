@@ -14,6 +14,7 @@ import Rating from '../Rating/Rating';
 
 
 class ClassMetrics extends Component {
+  
     render() {
         if (this.props.classMetrics) {
             const metrics = this.props.classMetrics;
@@ -62,13 +63,18 @@ class ClassMetrics extends Component {
                 <div className="classMetrics">  
                    <div className="container-fluid">
                <div className="row">
-                  <div className="left-menu col-md-3 col-xl-3 col-sm-12 col-xs-12 bd-sidebar2 d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                  <div className="left-menu col-md-2 col-xl-2 col-sm-12 col-xs-12 bd-sidebar2 d-none d-sm-none d-md-block d-lg-block d-xl-block">
                     <MetricsAll metricsData={this.props.metricsData}/>
                   </div>
                   <div className="col-sm-12 com-xs-12 d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
                     <MobileMetricsMenu metricsData={this.props.metricsData} />
                   </div>
-                  <div className="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12 mt-3">
+                  <div className="metrics-summary col-xl-10 col-md-10 col-sm-12 col-xs-12 mt-2">
+                  <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item" aria-current="page"><a href="/dashboard">Back to Summary</a></li>
+                    </ol>
+                  </nav>
                    <LargeTitle name={"Class: "+this.props.classMetrics.className}/>
                    <p><FontAwesomeIcon icon="info-circle" />&nbsp;Here are the individual metrics for each class below. Feedback is available below for each metric on the classes available.</p>
                    <div className="alert alert-secondary" role="alert">

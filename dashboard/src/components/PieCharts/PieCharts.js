@@ -13,7 +13,6 @@ export default class Example extends PureComponent {
 
   render() {
     const data = this.props.dataForChart;
-     console.log(data.length);
     return (
     <div className="pieChartContainer">
     <h2>{this.props.title}</h2>
