@@ -15,6 +15,11 @@ a.list-group-item{
 	background-color: var(--grayBackground);
 }
 
+a.list-group-item.active{
+	background-color: var(--blueColor);
+	color: var(--white);
+}
+
 a.list-group-item:hover{
 	background-color: var(--blueColor);
 	color: var(--white);

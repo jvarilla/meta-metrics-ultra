@@ -53,9 +53,9 @@ class ClassMetrics extends Component {
                   <div className="col-sm-12 com-xs-12 d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
                     <MobileMetricsMenu metricsData={this.props.metricsData} />
                   </div>
-                  <div className="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12">
+                  <div className="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12 mt-3">
                    <LargeTitle name={"Class: "+this.props.classMetrics.className}/>
-                   <Texts text="Here are the individual metrics for each class below. Feedback is available below for each metric on the classes available."/>
+                   <p><FontAwesomeIcon icon="info-circle" />&nbsp;Here are the individual metrics for each class below. Feedback is available below for each metric on the classes available.</p>
                    <div className="alert alert-secondary" role="alert">
                          <h5>Metrics Legend</h5>
                          <p><FontAwesomeIcon icon="thumbs-up" /> - Metric meet standards for CK Metrics Recommendations</p>

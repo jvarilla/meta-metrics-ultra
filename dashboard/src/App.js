@@ -71,7 +71,7 @@ class App extends React.Component {
               <div className="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12">
                 <Breadcrumbs />
                 <LargeTitle name="Metrics Summary"/>
-                <Texts text="Metrics Summary for store application"/>
+                <p><FontAwesomeIcon icon="info-circle" />&nbsp;Metrics Summary for store application</p>
                 <div className="row">
                     <Summary metricsData={this.state.metricsData} />
                   </div>

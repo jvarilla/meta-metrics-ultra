@@ -25,9 +25,6 @@ class Navigation extends Component{
             <li className="nav-item">
                 <a href="/dashboard" className="nav-link active"><FontAwesomeIcon icon="align-left" />&nbsp; Summary</a>
             </li>
-            <li className="nav-item">
-                <a href="/metrics" className="nav-link"><FontAwesomeIcon icon="chart-pie" />&nbsp; Metrics</a>
-            </li>
         </ul>
         </div>
 </nav>

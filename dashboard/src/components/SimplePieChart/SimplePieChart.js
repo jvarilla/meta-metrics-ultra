@@ -20,7 +20,7 @@ export default class Example extends PureComponent {
       <PieChart>
         <Pie
           data={data}
-          labelLine={false}
+          labelLine={true}
           label={(entry) => entry.value}
           outerRadius={150}
           fill="#8884d8"

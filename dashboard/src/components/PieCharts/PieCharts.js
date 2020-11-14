@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
-  PieChart, Pie, Sector, Cell, Legend, ResponsiveContainer
+  PieChart, Pie, Sector, Cell, Legend, ResponsiveContainer, Tooltip
 } from 'recharts';
 import './PieCharts.css';
 
@@ -20,7 +20,7 @@ export default class Example extends PureComponent {
       <PieChart>
         <Pie
           data={data}
-          labelLine={false}
+          labelLine={true}
           label={(entry) => entry.value}
           outerRadius={95}
           fill="#8884d8"
@@ -30,6 +30,7 @@ export default class Example extends PureComponent {
             data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
           }
         </Pie>
+        <Tooltip/>
         <Legend />
       </PieChart>
       </ResponsiveContainer>
