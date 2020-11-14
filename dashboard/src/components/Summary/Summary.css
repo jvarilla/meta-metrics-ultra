@@ -1,0 +1,16 @@
+ @import '../../variables.css';
+
+.card{
+	margin: 10px 0px;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.16);
+	min-height: 352px;
+	padding-bottom: 40px;
+}
+
+h2{
+	color: var(--blueColor);
+	font-size: 26px !important;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}

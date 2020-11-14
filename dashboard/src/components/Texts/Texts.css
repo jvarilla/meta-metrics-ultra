@@ -1,0 +1,7 @@
+ @import '../../variables.css';
+
+ .texts-paragraph{
+ 	color: var(--grayColor);
+ 	font-size: 16px;
+ }
+

@@ -1,0 +1,99 @@
+ @import '../../variables.css';
+
+.navbar-meta{
+	height: 76px;
+	padding: 0.5rem 0px !important;
+}
+
+a.navbar-brand{
+	margin-top: 7px;
+	margin-left: 15px;
+}
+
+.nav-bar-inner{
+	margin-top: -5px;
+}
+
+button.navbar-toggler{
+	margin-top: 15px;
+	margin-right: 15px;
+	border: 0px;
+	color: --var(blueColor) !important;
+}
+
+.navbar-toggler-icon{
+	background-image: none !important;
+}
+
+.navbar-toggler-icon i, .navbar-toggler-icon svg{
+	color: var(--blueColor);
+	font-size: 35px;
+}
+
+.nav-pills{
+	margin-top: none !important;
+}
+
+#mobile-menu{
+	margin-top: 0px;
+	background: var(--white);
+	width: 100%;
+	z-index: 3000;
+}
+
+#mobile-menu.nav-item{
+	background: red;
+}
+
+.nav-item a{
+	height: 100px;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	font-weight: bold;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: background .2s linear;
+	background: var(--blueColor);
+}
+
+.nav-link.active{
+	background-color: var(--darkBlue) !important;
+}
+
+.nav-item a:hover{
+	background: var(--darkBlue);
+}
+
+.nav-item a i, .nav-item a svg{
+	font-size: 40px;
+}
+
+.nav-link{
+	color: var(--white) !important;
+	padding: 0px 0px;
+}
+
+
+
+.nav-pills .nav-link{
+	border-radius: 0px !important;
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 768px){
+ .nav-item a{
+	height: 76px;
+	font-size: 12px;
+ }
+
+ .nav-item a i, .nav-item a svg{
+	font-size: 25px;
+ }
+
+ a.nav-link{
+	color: var(--white) !important;
+	padding: 0px 15px !important;
+}
+}

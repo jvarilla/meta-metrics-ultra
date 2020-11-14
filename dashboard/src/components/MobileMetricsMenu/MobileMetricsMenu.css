@@ -1,0 +1,42 @@
+ @import '../../variables.css';
+
+
+.dropupArea{
+	width: 100%;
+}
+
+#mobileButton{
+	background-color: var(--blueColor);
+	color: var(--white);
+	font-weight: bold;
+	border-radius: 0px;
+	height: 76px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color .2s linear;
+}
+
+#mobileButton:hover{
+  background-color: var(--darkBlue);
+}
+
+.mobileDropdownMenu{
+	width: 100%;
+	border-radius: 0px;
+}
+
+a.dropdown-item{
+	text-align: center;
+	font-size: 29px;
+	height: 77px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color .2s linear;
+}
+
+a.dropdown-item:hover{
+	background-color: var(--blueColor);
+	color: var(--white);
+}

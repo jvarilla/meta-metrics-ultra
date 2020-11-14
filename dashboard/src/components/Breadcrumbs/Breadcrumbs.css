@@ -1,0 +1,22 @@
+ @import '../../variables.css';
+
+ ol.breadcrumb{
+ 	background-color: var(--bodyColor);
+ 	color: var(--darkBlue);
+ 	padding: 0.75rem 0rem;
+ 	font-size: 16px;
+ }
+
+.breadcrumb-item a{
+	color: var(--darkBlue) !important;
+}
+
+.breadcrumb-item.active a{
+	color: var(--blueColor) !important;
+ 	text-decoration: underline;
+ }
+
+ .breadcrumb-item + .breadcrumb-item::before{
+ 	text-decoration: none;
+ 	color: var(--darkBlue);
+ }

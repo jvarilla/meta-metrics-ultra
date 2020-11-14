@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {
-  BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
+import './BarCharts.css';
 
-const data = [
+/*const data = [
   {
     name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
   },
@@ -25,18 +26,17 @@ const data = [
   {
     name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
   },
-];
+];*/
 
 class BarCharts extends Component {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/90v76x08/';
 
   render() {
+    const data = this.props.metricsData;
     return (
-      <div>
-      <h2>Bar Chart</h2>
+      <div className="barChartsContainer">
+      <h2>{this.props.title}</h2>
       <BarChart
-        width={500}
-        height={300}
         data={data}
         margin={{
           top: 20, right: 30, left: 20, bottom: 5,
@@ -47,8 +47,8 @@ class BarCharts extends Component {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" stackId="a" fill="#8884d8" />
-        <Bar dataKey="uv" stackId="a" fill="#82ca9d" />
+        <Bar dataKey="pv" stackId="a" fill="#0005D4" />
+        <Bar dataKey="uv" stackId="a" fill="#000493" />
       </BarChart>
       </div>
     );

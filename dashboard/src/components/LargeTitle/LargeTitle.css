@@ -1,0 +1,8 @@
+ @import '../../variables.css';
+
+.LargeTitle{
+	text-transform: uppercase;
+	color: var(--darkBlue);
+	font-weight: bold;
+	font-size: 36px;
+}
