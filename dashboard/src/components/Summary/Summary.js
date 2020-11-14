@@ -16,29 +16,24 @@ class Summary extends Component{
 
                 if(v == 0){
                     console.log();
-                   return( <div className="col-lg-6 col-md-6 col-sm-12" key={v}>
-                <div className="card">
-                <div className="card-body">
-                    <div>
-                        <h2>{k}</h2>
-                        <PathText text={this.props.metricsData.summary.pathToSrc}/>
+                   return(
+                    <div className="col-lg-6 col-md-6 col-sm-12" key={v}>
+                    <div className="alert alert-secondary" role="alert">
+                         <h2>{k}</h2>
+                         <p className="text-center">This is the path to the src files</p>
+                         <p><FontAwesomeIcon icon="file-alt" />&nbsp;{this.props.metricsData.summary.pathToSrc}</p>
                     </div>
-                </div>
-            </div>
-         </div>
+                   </div>
          );
         }else if(v == 1){
-                    console.log();
-                   return( <div className="col-lg-6 col-md-6 col-sm-12" key={v}>
-                <div className="card">
-                <div className="card-body">
-                    <div>
-                        <h2>{k}</h2>
-                        <PathText text={this.props.metricsData.summary.pathToBin}/> 
+                   return( 
+                 <div className="col-lg-6 col-md-6 col-sm-12" key={v}>
+                    <div className="alert alert-secondary" role="alert">
+                         <h2>{k}</h2>
+                         <p className="text-center">This is the path to the bin files</p>
+                         <p><FontAwesomeIcon icon="file-alt" />&nbsp;{this.props.metricsData.summary.pathToBin}</p>
                     </div>
-                </div>
-            </div>
-         </div>
+                   </div>
          );
                 }else{
                     const chartData = [
@@ -50,7 +45,7 @@ class Summary extends Component{
                   <div className="col-lg-6 col-md-6 col-sm-12" key={v}>
                 <div className="card">
                 <div className="card-body">
-                    <div>
+                    <div className="myContainerPieChart">
                         <PieCharts title={k} dataForChart={chartData}/>
                     </div>
                 </div>

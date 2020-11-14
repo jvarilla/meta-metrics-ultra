@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
-  BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
+import './BarCharts.css';
 
 /*const data = [
   {
@@ -33,11 +34,9 @@ class BarCharts extends Component {
   render() {
     const data = this.props.metricsData;
     return (
-      <div>
+      <div className="barChartsContainer">
       <h2>{this.props.title}</h2>
       <BarChart
-        width={300}
-        height={250}
         data={data}
         margin={{
           top: 20, right: 30, left: 20, bottom: 5,

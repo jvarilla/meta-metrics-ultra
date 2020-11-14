@@ -71,8 +71,7 @@ class ClassMetrics extends Component {
                                     <b><Rating r1={0} r2={4} oneNum={true} num={metrics.dit.value} />&nbsp; Results for DIT</b>
                                     <p>The Depth of inheritance measures the maximum number of steps from the class node to the root of the inheritance. Your value is {metrics.dit.value}.</p>
                                 </div>
-                                
-                                <PieCharts title="Ancestors" dataForChart={ancestors}/>
+                                <SimplePieChart title="Ancestors" metricsData={ancestors}/>
                              </div>
                             </div>
                         </div>
@@ -130,7 +129,7 @@ class ClassMetrics extends Component {
                                     <b><Rating r1={0} r2={10} oneNum={true} num={metrics.interfaces.numberOfInterfacesImplemented} />&nbsp; Results for RFC</b>
                                     <p>RFC is defined as a count of the set of methods that can be potentially executed in response to a message received by an instance of the class. The Total RFC is {metrics.rfc.total}. The RFC value is typically between 0 to 50 depending on the project.</p>
                              </div>
-                                <PieCharts title="Interfaces" dataForChart={ifc}/>
+                                <SimplePieChart title="Interfaces" metricsData={ifc}/>
                         </div>
                         </div>
                    </div>
