@@ -21,7 +21,13 @@ export default class Example extends PureComponent {
         <Pie
           data={data}
           labelLine={true}
-          label={(entry) => entry.value.toFixed(1)}
+          label={(entry) => {
+            try {
+              return entry.value.toFixed(1);
+            } catch(err) {
+              return '';
+            }
+          }}
           outerRadius={150}
           fill="#8884d8"
           dataKey="value"
