@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navigation.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -20,10 +22,10 @@ class Navigation extends Component{
     <div className="collapse navbar-collapse text-center" id="mobile-menu">
         <ul className="navbar-nav ml-auto flex-nowrap nav-pills">
             <li className="nav-item">
-                <a href="/" className="nav-link"><FontAwesomeIcon icon="upload" />&nbsp; Upload</a>
+                <NavLink to="/" activeClassName="active" className="nav-link"><FontAwesomeIcon icon="upload" />&nbsp; Upload</NavLink>
             </li>
             <li className="nav-item">
-                <a href="/dashboard" className="nav-link active"><FontAwesomeIcon icon="align-left" />&nbsp; Summary</a>
+                <NavLink to="/dashboard" activeClassName="active" className="nav-link"><FontAwesomeIcon icon="align-left" />&nbsp; Summary</NavLink>
             </li>
         </ul>
         </div>

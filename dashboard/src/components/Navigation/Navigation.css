@@ -50,12 +50,16 @@ button.navbar-toggler{
 	justify-content: center;
 	display: flex;
 	align-items: center;
-	background: var(--blueColor);
 	font-size: 24px;
 	font-weight: bold;
 	cursor: pointer;
 	text-transform: uppercase;
 	transition: background .2s linear;
+	background: var(--blueColor);
+}
+
+.nav-link.active{
+	background-color: var(--darkBlue) !important;
 }
 
 .nav-item a:hover{
@@ -71,9 +75,7 @@ button.navbar-toggler{
 	padding: 0px 0px;
 }
 
-a.nav-link.active{
-	background-color: var(--darkBlue) !important;
-}
+
 
 .nav-pills .nav-link{
 	border-radius: 0px !important;
