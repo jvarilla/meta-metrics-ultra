@@ -59,7 +59,7 @@ class ClassMetrics extends Component {
             //if(metric.interfaces == null)
 
             return (
-                <div>  
+                <div className="classMetrics">  
                    <div className="container-fluid">
                <div className="row">
                   <div className="left-menu col-md-3 col-xl-3 col-sm-12 col-xs-12 bd-sidebar2 d-none d-sm-none d-md-block d-lg-block d-xl-block">

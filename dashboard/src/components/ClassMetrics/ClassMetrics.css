@@ -5,7 +5,7 @@
  	background-color: var(--white) !important;
  }
 
- .card{
+ .classMetrics.card{
  	min-height: 100px;
     height: auto;
  }
@@ -13,7 +13,7 @@
 
  /* Desktop Styles */
 @media screen and (min-width: 768px){
-	.card{
+	 .classMetrics.card{
 		min-height: 790px;
 		height: auto;
 	}
