@@ -20,28 +20,43 @@ class ClassMetrics extends Component {
 
             // ancestors for DIT
             const ancestors = metrics.dit.ancestors.map((k, v) => {
-                return {name: k, value: 1};
+                return {name: k, value: metrics.dit.value};
             });
+
+            let anc;
+            if(metrics.dit.ancestors.length == 0){
+              var a = [{name: "Ancestors not found", value: 0.01}]
+               anc = <SimplePieChart title="Ancestors" metricsData={a}/>
+            }else{
+              anc = <SimplePieChart title="Ancestors" metricsData={ancestors}/>
+            }
 
             // wmc
             const wmc = Object.keys(metrics.wmc.numberOfMethods).map((k,v) => {
-                 return {name: k +" - "+metrics.wmc.numberOfMethods[k], value: metrics.wmc.numberOfMethods[k]};
+                  var val = (metrics.wmc.numberOfMethods[k] == 0) ? 0.01 : metrics.wmc.numberOfMethods[k];
+                 return {name: k +" - "+metrics.wmc.numberOfMethods[k], value: val};
             });
 
             //num of fields
             const nof = Object.keys(metrics.numFields).map((k,v) => {
-                 return {name: k +" - "+metrics.numFields[k], value: metrics.numFields[k]};
+              var val = (metrics.numFields[k] == 0) ? 0.01 : metrics.numFields[k];
+                 return {name: k +" - "+metrics.numFields[k], value: val};
             });
 
             // rfc
             const rfc = Object.keys(metrics.rfc).map((k,v) => {
-                 return {name: k +" - "+metrics.rfc[k], value: metrics.rfc[k]};
+              var val = (metrics.rfc[k] == 0) ? 0.01 : metrics.rfc[k];
+                 return {name: k +" - "+metrics.rfc[k], value: val};
             });
 
             // interfaces
             const ifc = Object.keys(metrics.interfaces).map((k,v) => {
-                 return {name: k +" - "+metrics.interfaces[k], value: metrics.interfaces[k] + 0.0001};
+              var val = (metrics.interfaces[k] == 0) ? 0.01 : metrics.interfaces[k];
+                 return {name: k +" - "+metrics.interfaces[k], value: val};
             });
+
+           // let interf;
+            //if(metric.interfaces == null)
 
             return (
                 <div>  
@@ -71,7 +86,7 @@ class ClassMetrics extends Component {
                                     <b><Rating r1={0} r2={4} oneNum={true} num={metrics.dit.value} />&nbsp; Results for DIT</b>
                                     <p>The Depth of inheritance measures the maximum number of steps from the class node to the root of the inheritance. Your value is {metrics.dit.value}.</p>
                                 </div>
-                                <SimplePieChart title="Ancestors" metricsData={ancestors}/>
+                                {anc}
                              </div>
                             </div>
                         </div>

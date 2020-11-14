@@ -4,3 +4,17 @@
  	border: 1px solid var(--darkGray);
  	background-color: var(--white) !important;
  }
+
+ .card{
+ 	min-height: 100px;
+    height: auto;
+ }
+
+
+ /* Desktop Styles */
+@media screen and (min-width: 768px){
+	.card{
+		min-height: 790px;
+		height: auto;
+	}
+}
