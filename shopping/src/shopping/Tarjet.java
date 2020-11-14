@@ -1,6 +1,6 @@
 package shopping;
 
-public class Tarjet {
+public final class Tarjet implements Store{
 	public Inventory i = new Inventory();
 	public double profit;
 	private final String password;

@@ -3,8 +3,8 @@ package shopping;
 public class Apple extends Food {
 	private final String type;
 	
-	public Apple(double p, double c, double g) {
-		super(p, c, g);
+	public Apple(double p) {
+		super(p, 80, 680.4);
 		type = "Honey Crisp";
 	}
 	public Apple(double p, double c, double g, String s) {

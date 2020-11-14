@@ -2,7 +2,7 @@ package shopping;
 
 import java.util.ArrayList;
 
-public class Cart {
+public class Cart implements ShoppingCart{
 	public ArrayList<Product> c;
 	public double total;
 	public Cart() {

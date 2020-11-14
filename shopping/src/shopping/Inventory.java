@@ -27,9 +27,12 @@ public class Inventory {
 			System.out.println("Item number: "+i+ " of product: " + products.get(i).toString());
 		}
 	}
+	public Product getProduct(int i) {
+		return products.get(i);
+	}
 	
 	public void random() {
-		products.add(new Apple(5, 100, 10));
+		products.add(new Apple(5));
 		amount.add(10);
 		
 	}
