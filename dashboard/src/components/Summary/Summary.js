@@ -36,11 +36,11 @@ class Summary extends Component{
                    </div>
          );
                 }else{
+                    var test = (parseFloat(this.props.metricsData.summary[k]) == 0) ? 0.001 : parseFloat(this.props.metricsData.summary[k]);
                     const chartData = [
-                        {name: k +" - "+parseFloat(this.props.metricsData.summary[k].toFixed(2)), value: parseFloat(this.props.metricsData.summary[k].toFixed(3))},
-                        {name: "Initial", value: 1}
+                        {name: k +" - "+parseFloat(this.props.metricsData.summary[k].toFixed(2)), value: parseFloat(test.toFixed(2))},
+                        {name: "Init", value: 1}
                     ];
-                    console.log();
                     return(
                   <div className="col-lg-6 col-md-6 col-sm-12" key={v}>
                 <div className="card">
