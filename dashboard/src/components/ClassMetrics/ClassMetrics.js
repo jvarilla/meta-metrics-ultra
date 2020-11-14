@@ -54,18 +54,22 @@ class ClassMetrics extends Component {
                     <MobileMetricsMenu metricsData={this.props.metricsData} />
                   </div>
                   <div className="metrics-summary col-xl-9 col-md-9 col-sm-12 col-xs-12">
-                   <LargeTitle name={this.props.classMetrics.className}/>
+                   <LargeTitle name={"Class: "+this.props.classMetrics.className}/>
                    <Texts text="Here are the individual metrics for each class below. Feedback is available below for each metric on the classes available."/>
+                   <div className="alert alert-secondary" role="alert">
+                         <h5>Metrics Legend</h5>
+                         <p><FontAwesomeIcon icon="thumbs-up" /> - Metric meet standards for CK Metrics Recommendations</p>
+                         <p><FontAwesomeIcon icon="thumbs-down" /> - DOES NOT Metric meet standards for CK Metrics Recommendations</p>
+                    </div>
                    <div className="row">
-                   <div className="col-lg-4 col-md-6 col-sm-12">
+                   <div className="col-lg-6 col-md-6 col-sm-12">
                     <div className="card">
                         <div className="card-body">
                             <div>
                             <h2>DIT (Depth of Inheritance)</h2>
                                 <div className="alert alert-secondary" role="alert">
-                                    <Texts text={"DIT Value: "+metrics.dit.value}/>
-                                    <b><Rating list={ancestors} r1={0} r2={4} num={metrics.dit.value} />&nbsp; Feedback</b>
-                                    <p>The Depth of inheritance measures the maximum number of steps from the class node to the root of the inheritance.</p>
+                                    <b><Rating r1={0} r2={4} oneNum={true} num={metrics.dit.value} />&nbsp; Results for DIT</b>
+                                    <p>The Depth of inheritance measures the maximum number of steps from the class node to the root of the inheritance. Your value is {metrics.dit.value}.</p>
                                 </div>
                                 
                                 <PieCharts title="Ancestors" dataForChart={ancestors}/>
@@ -74,14 +78,14 @@ class ClassMetrics extends Component {
                         </div>
                    </div>
 
-                   <div className="col-lg-4 col-md-6 col-sm-12">
+                   <div className="col-lg-6 col-md-6 col-sm-12">
                     <div className="card">
                         <div className="card-body">
                             <div>
-                            <h2>WMC</h2>
+                            <h2>WMC (Weighted methods per class)</h2>
                                 <div className="alert alert-secondary" role="alert">
-                                    <Texts text={"WMC Value: "+metrics.wmc.value}/>
-                                    <Texts text={"# of Constructors: "+metrics.wmc.numberOfConstructors}/>
+                                    <b><Rating r1={0} r2={4} oneNum={true} num={metrics.wmc.value} />&nbsp; Results for WMC</b>
+                                    <p>WMC measures the complexity of a class. Complexity of a class can for example be calculated by the cyclomatic complexities of its methods. Smaller values are better for WMC. Your value is {metrics.wmc.value} with {metrics.wmc.numberOfConstructors} constructors.</p>
                                 </div>
                                 
                                 <SimplePieChart title="Number of Methods" metricsData={wmc}/>
@@ -90,33 +94,44 @@ class ClassMetrics extends Component {
                         </div>
                    </div>
 
-                   <div className="col-lg-4 col-md-6 col-sm-12">
+                   <div className="col-lg-6 col-md-6 col-sm-12">
                     <div className="card">
                         <div className="card-body">
-                            <div>
-                                <SimplePieChart title="Number of Fields" metricsData={nof}/>
+                        <h2>NOF (Number of Fields)</h2>
+                              <div className="alert alert-secondary" role="alert">
+                                    <b><Rating r1={0} r2={4} oneNum={true} num={0} />&nbsp; Results for NOF</b>
+                                    <p>The number of fields show the total methods for the class.</p>
                              </div>
+
+                                <SimplePieChart title="NOF Metrics" metricsData={nof}/>
                             </div>
                         </div>
                    </div>
 
-                   <div className="col-lg-4 col-md-6 col-sm-12">
+                   <div className="col-lg-6 col-md-6 col-sm-12">
                     <div className="card">
                         <div className="card-body">
-                            <div>
-                                <SimplePieChart title="RFC" metricsData={rfc}/>
+                            <h2>RFC (Response for a Class)</h2>
+                              <div className="alert alert-secondary" role="alert">
+                                    <b><Rating r1={0} r2={50} oneNum={true} num={metrics.rfc.total} />&nbsp; Results for RFC</b>
+                                    <p>RFC is defined as a count of the set of methods that can be potentially executed in response to a message received by an instance of the class. The Total RFC is {metrics.rfc.total}. The RFC value is typically between 0 to 50 depending on the project.</p>
                              </div>
+                            <SimplePieChart title="RFC" metricsData={rfc}/>
+                             
                             </div>
                         </div>
                    </div>
 
-                   <div className="col-lg-4 col-md-6 col-sm-12">
+                   <div className="col-lg-6 col-md-6 col-sm-12">
                     <div className="card">
                         <div className="card-body">
-                            <div>
+                        <h2>Interfaces for Class</h2>
+                              <div className="alert alert-secondary" role="alert">
+                                    <b><Rating r1={0} r2={10} oneNum={true} num={metrics.interfaces.numberOfInterfacesImplemented} />&nbsp; Results for RFC</b>
+                                    <p>RFC is defined as a count of the set of methods that can be potentially executed in response to a message received by an instance of the class. The Total RFC is {metrics.rfc.total}. The RFC value is typically between 0 to 50 depending on the project.</p>
+                             </div>
                                 <PieCharts title="Interfaces" dataForChart={ifc}/>
-                             </div>
-                            </div>
+                        </div>
                         </div>
                    </div>
 

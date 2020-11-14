@@ -4,6 +4,8 @@ import PieCharts from '../PieCharts/PieCharts';
 import LargeTitle from '../LargeTitle/LargeTitle';
 import BarCharts from '../BarCharts/BarCharts';
 import PathText from '../PathText/PathText';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Rating from '../Rating/Rating';
 
 const charTypes = ["none", "pie", "bar"];
 
@@ -14,7 +16,7 @@ class Summary extends Component{
 
                 if(v == 0){
                     console.log();
-                   return( <div className="col-lg-4 col-md-6 col-sm-12" key={v}>
+                   return( <div className="col-lg-6 col-md-6 col-sm-12" key={v}>
                 <div className="card">
                 <div className="card-body">
                     <div>
@@ -27,7 +29,7 @@ class Summary extends Component{
          );
         }else if(v == 1){
                     console.log();
-                   return( <div className="col-lg-4 col-md-6 col-sm-12" key={v}>
+                   return( <div className="col-lg-6 col-md-6 col-sm-12" key={v}>
                 <div className="card">
                 <div className="card-body">
                     <div>
@@ -45,7 +47,7 @@ class Summary extends Component{
                     ];
                     console.log();
                     return(
-                  <div className="col-lg-4 col-md-6 col-sm-12" key={v}>
+                  <div className="col-lg-6 col-md-6 col-sm-12" key={v}>
                 <div className="card">
                 <div className="card-body">
                     <div>
