@@ -8,30 +8,32 @@
 <b>Created By Joseph Varilla, Shatilla Prayer, and Arturo Granados</b>
 
 ### Instructions:
-1. Clone or download this project.
-2. Open a terminal, cd into the project's app directory
+1. Install <a href="https://www.oracle.com/java/technologies/javase-downloads.html">Java 8</a> or above if not currently installed on your machine
+2. Install <a href="https://nodejs.org/en/">Node.js</a> 10.15 or above if not currently installed on your machine
+3. Clone or download this project.
+4. Open a terminal, cd into the project's app directory
 
 ```
 cd app
 ```
-3. Run <b>npm install</b> (Make sure to have the latest stable version)
+5. Run <b>npm install</b> (Make sure to have the latest stable version)
 ```
 npm install
 ```
-4. In the app directory, Run node main.js
+6. In the app directory, Run node main.js
 ```
 node main.js
 ```
-5. Enter the src path
+7. Enter the src path
 ```
 Path to src
 ../shopping/src 
 ```
-6. Enter the bin path
+8. Enter the bin path
 ```
 Path to bin
 ../shopping/bin 
 ```
-7. Open your browswer to ```http://localhost:8080```
+9. Open your browswer to ```http://localhost:8080```
 
-8. Click <b>View Results</b> to see the Data visualization dashboard.
+10. Click <b>View Results</b> to see the Data visualization dashboard.
