@@ -147,8 +147,8 @@ class ClassMetrics extends Component {
                         <div className="card-body">
                         <h2>Interfaces for Class</h2>
                               <div className="alert alert-secondary" role="alert">
-                                    <b><Rating r1={0} r2={10} oneNum={true} num={metrics.interfaces.numberOfInterfacesImplemented} />&nbsp; Results for RFC</b>
-                                    <p>RFC is defined as a count of the set of methods that can be potentially executed in response to a message received by an instance of the class. The Total RFC is {metrics.rfc.total}. The RFC value is typically between 0 to 50 depending on the project.</p>
+                                    <b><Rating r1={-1} r2={-1} oneNum={false} num={metrics.interfaces.numberOfInterfacesImplemented} />&nbsp; Results for Class Interfaces</b>
+                                    <p>These are the number of interface implementions in the class. If there is not an interface, this means that the dependency inversion principle is not being followed and that the classes are tightly coupled to concrete implementations. This would make the code brittle and hard to change.</p>
                              </div>
                                 <SimplePieChart title="Interfaces" metricsData={ifc}/>
                         </div>

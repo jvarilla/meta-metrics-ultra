@@ -22,6 +22,20 @@ class Rating extends Component{
                <FontAwesomeIcon icon="thumbs-down" />
              );
             }
+        }else{
+            
+            if(r1 === -1 && r2 === -1){
+                console.log(num);
+                if(num <= 0){
+                    return(
+                        <FontAwesomeIcon icon="thumbs-down" />
+                    );
+                }else{
+                    return(
+                        <FontAwesomeIcon icon="thumbs-up" />
+                    );
+                }
+            }
         }
     }
 }
