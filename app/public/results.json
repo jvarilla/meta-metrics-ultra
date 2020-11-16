@@ -2,14 +2,14 @@
   "summary": {
     "pathToSrc": "C:\\Users\\jvari\\ProjectsJ\\SE433\\finalProject\\app\\..\\shopping\\src",
     "pathToBin": "C:\\Users\\jvari\\ProjectsJ\\SE433\\finalProject\\app\\..\\shopping\\bin",
-    "loc": 293,
-    "numberOfFiles": 15,
+    "loc": 419,
+    "numberOfFiles": 17,
     "numberOfClasses": 12,
-    "numberOfInterfaceImplementations": 1,
+    "numberOfInterfaceImplementations": 3,
     "avgDit": 0.8333333333333334,
-    "avgWmc": 3.75,
+    "avgWmc": 4.5,
     "avgNumFields": 1.6666666666666667,
-    "avgRFC": 56.833333333333336
+    "avgRFC": 57.666666666666664
   },
   "classes": [
     {
@@ -87,8 +87,10 @@
         "numberOfFieldObjects": 1
       },
       "interfaces": {
-        "numberOfInterfacesImplemented": 0,
-        "interfacesImplemented": []
+        "numberOfInterfacesImplemented": 1,
+        "interfacesImplemented": [
+          "shopping.ShoppingCart"
+        ]
       }
     },
     {
@@ -257,13 +259,13 @@
         "ancestors": []
       },
       "wmc": {
-        "value": 8,
+        "value": 9,
         "numberOfConstructors": 1,
         "numberOfMethods": {
-          "totalMethods": 7,
+          "totalMethods": 8,
           "privateMethods": 0,
           "protectedMethods": 0,
-          "publicMethods": 7,
+          "publicMethods": 8,
           "packagePrivateMethods": 0,
           "staticMethods": 1
         }
@@ -277,8 +279,8 @@
         "staticFields": 0
       },
       "rfc": {
-        "total": 53,
-        "methodsFromCurrentClass": 7,
+        "total": 54,
+        "methodsFromCurrentClass": 8,
         "methodsFromFieldObjects": 46,
         "methodsInherited": 0,
         "numberOfFieldObjects": 2
@@ -295,15 +297,15 @@
         "ancestors": []
       },
       "wmc": {
-        "value": 4,
+        "value": 12,
         "numberOfConstructors": 1,
         "numberOfMethods": {
-          "totalMethods": 3,
-          "privateMethods": 0,
+          "totalMethods": 11,
+          "privateMethods": 1,
           "protectedMethods": 0,
-          "publicMethods": 3,
+          "publicMethods": 10,
           "packagePrivateMethods": 0,
-          "staticMethods": 3
+          "staticMethods": 11
         }
       },
       "numFields": {
@@ -315,8 +317,8 @@
         "staticFields": 0
       },
       "rfc": {
-        "total": 3,
-        "methodsFromCurrentClass": 3,
+        "total": 11,
+        "methodsFromCurrentClass": 11,
         "methodsFromFieldObjects": 0,
         "methodsInherited": 0,
         "numberOfFieldObjects": 0
@@ -393,15 +395,17 @@
         "staticFields": 0
       },
       "rfc": {
-        "total": 87,
+        "total": 88,
         "methodsFromCurrentClass": 3,
-        "methodsFromFieldObjects": 84,
+        "methodsFromFieldObjects": 85,
         "methodsInherited": 0,
         "numberOfFieldObjects": 2
       },
       "interfaces": {
-        "numberOfInterfacesImplemented": 0,
-        "interfacesImplemented": []
+        "numberOfInterfacesImplemented": 1,
+        "interfacesImplemented": [
+          "shopping.Store"
+        ]
       }
     },
     {

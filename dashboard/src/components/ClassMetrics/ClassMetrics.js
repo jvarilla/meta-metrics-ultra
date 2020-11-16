@@ -33,19 +33,25 @@ class ClassMetrics extends Component {
             }
 
             // wmc
-            const wmc = Object.keys(metrics.wmc.numberOfMethods).map((k,v) => {
-                  var val = (metrics.wmc.numberOfMethods[k] == 0) ? 0.01 : metrics.wmc.numberOfMethods[k];
+            const wmc = Object.keys(metrics.wmc.numberOfMethods).filter((k, v) => {
+                return k !== 'totalMethods' && k !== 'staticMethods';
+            }).map((k,v) => {
+                  var val = (metrics.wmc.numberOfMethods[k] === 0) ? 0.01 : metrics.wmc.numberOfMethods[k];
                  return {name: k +" - "+metrics.wmc.numberOfMethods[k], value: val};
             });
 
             //num of fields
-            const nof = Object.keys(metrics.numFields).map((k,v) => {
+            const nof = Object.keys(metrics.numFields).filter((k, v) => {
+                return k !== 'totalFields' && k !== 'staticFields';
+            }).map((k,v) => {
               var val = (metrics.numFields[k] == 0) ? 0.01 : metrics.numFields[k];
                  return {name: k +" - "+metrics.numFields[k], value: val};
             });
 
             // rfc
-            const rfc = Object.keys(metrics.rfc).map((k,v) => {
+            const rfc = Object.keys(metrics.rfc).filter((k, v) => {
+                return k !== 'total' && k !== 'numberOfFieldObjects';
+            }).map((k,v) => {
               var val = (metrics.rfc[k] == 0) ? 0.01 : metrics.rfc[k];
                  return {name: k +" - "+metrics.rfc[k], value: val};
             });
@@ -87,11 +93,18 @@ class ClassMetrics extends Component {
                     <div className="card">
                         <div className="card-body">
                             <div>
-                            <h2>DIT (Depth of Inheritance)</h2>
+                            <h2>DIT (Depth of Inheritance): {this.props.classMetrics.dit.value}</h2>
                                 <div className="alert alert-secondary" role="alert">
                                     <b><Rating r1={0} r2={4} oneNum={true} num={metrics.dit.value} />&nbsp; Results for DIT</b>
                                     <p>The Depth of inheritance measures the maximum number of steps from the class node to the root of the inheritance. Your value is {metrics.dit.value}.</p>
                                 </div>
+                                {
+                                    this.props.classMetrics.dit.ancestors.length === 0 ? 
+                                        (<h3>{this.props.classMetrics.className}</h3>) 
+                                        : this.props.classMetrics.dit.ancestors.forEach((ancestor) => {
+                                            return (<h3>{ancestor + '↳'}</h3>)
+                                        })
+                                }
                                 {anc}
                              </div>
                             </div>
@@ -102,13 +115,16 @@ class ClassMetrics extends Component {
                     <div className="card">
                         <div className="card-body">
                             <div>
-                            <h2>WMC (Weighted methods per class)</h2>
+                            <h2>WMC (Weighted methods per class): {this.props.classMetrics.wmc.value}</h2>
                                 <div className="alert alert-secondary" role="alert">
                                     <b><Rating r1={0} r2={4} oneNum={true} num={metrics.wmc.value} />&nbsp; Results for WMC</b>
                                     <p>WMC measures the complexity of a class. Complexity of a class can for example be calculated by the cyclomatic complexities of its methods. Smaller values are better for WMC. Your value is {metrics.wmc.value} with {metrics.wmc.numberOfConstructors} constructors.</p>
                                 </div>
-                                
-                                <SimplePieChart title="Number of Methods" metricsData={wmc}/>
+                                <h4>Total Constructors: {this.props.classMetrics.wmc.numberOfConstructors}</h4>
+                                <h4>Total Methods: {this.props.classMetrics.wmc.numberOfMethods.totalMethods}</h4>
+                                <h5>Static Methods: {this.props.classMetrics.wmc.numberOfMethods.staticMethods}</h5>
+                                <br></br>
+                                <SimplePieChart title="Methods By Accessibility" metricsData={wmc}/>
                              </div>
                             </div>
                         </div>
@@ -117,13 +133,15 @@ class ClassMetrics extends Component {
                    <div className="col-lg-6 col-md-6 col-sm-12">
                     <div className="card">
                         <div className="card-body">
-                        <h2>NOF (Number of Fields)</h2>
+                        <h2>NOF (Number of Fields): {this.props.classMetrics.numFields.totalFields}</h2>
                               <div className="alert alert-secondary" role="alert">
                                     <b><Rating r1={0} r2={4} oneNum={true} num={0} />&nbsp; Results for NOF</b>
                                     <p>The number of fields show the total methods for the class.</p>
                              </div>
-
-                                <SimplePieChart title="NOF Metrics" metricsData={nof}/>
+                             <h4>Total Fields: {this.props.classMetrics.numFields.totalFields}</h4>
+                             <h5>Static Fields: {this.props.classMetrics.numFields.staticFields}</h5>
+                                <br></br>
+                                <SimplePieChart title="Fields By Accessiblity" metricsData={nof}/>
                             </div>
                         </div>
                    </div>
@@ -131,12 +149,15 @@ class ClassMetrics extends Component {
                    <div className="col-lg-6 col-md-6 col-sm-12">
                     <div className="card">
                         <div className="card-body">
-                            <h2>RFC (Response for a Class)</h2>
+                            <h2>RFC (Response for a Class): {this.props.classMetrics.rfc.total}</h2>
                               <div className="alert alert-secondary" role="alert">
                                     <b><Rating r1={0} r2={50} oneNum={true} num={metrics.rfc.total} />&nbsp; Results for RFC</b>
                                     <p>RFC is defined as a count of the set of methods that can be potentially executed in response to a message received by an instance of the class. The Total RFC is {metrics.rfc.total}. The RFC value is typically between 0 to 50 depending on the project.</p>
                              </div>
-                            <SimplePieChart title="RFC" metricsData={rfc}/>
+                             <h4>Total RFC: {this.props.classMetrics.rfc.total}</h4>
+                             <h4>Total Field Objects: {this.props.classMetrics.rfc.numberOfFieldObjects}</h4>
+                                <br></br>
+                             <SimplePieChart title="Response by Type" metricsData={rfc}/>
                              
                             </div>
                         </div>
@@ -145,7 +166,7 @@ class ClassMetrics extends Component {
                    <div className="col-lg-6 col-md-6 col-sm-12">
                     <div className="card">
                         <div className="card-body">
-                        <h2>Interfaces for Class</h2>
+                        <h2>Interfaces for Class: {this.props.classMetrics.interfaces.numberOfInterfacesImplemented}</h2>
                               <div className="alert alert-secondary" role="alert">
                                     <b><Rating r1={-1} r2={-1} oneNum={false} num={metrics.interfaces.numberOfInterfacesImplemented} />&nbsp; Results for Class Interfaces</b>
                                     <p>These are the number of interface implementions in the class. If there is not an interface, this means that the dependency inversion principle is not being followed and that the classes are tightly coupled to concrete implementations. This would make the code brittle and hard to change.</p>

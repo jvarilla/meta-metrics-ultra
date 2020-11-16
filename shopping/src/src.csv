@@ -1,0 +1,36 @@
+Kind,Name,MaxInheritanceTree,CountDeclMethod,CountDeclInstanceVariable
+File,"AMenu.java",,4,5
+File,"Apple.java",,4,1
+File,"CMenu.java",,4,7
+File,"Cart.java",,5,2
+File,"Console.java",,2,1
+File,"Customer.java",,3,2
+File,"Electronic.java",,2,1
+File,"Food.java",,4,2
+File,"Inventory.java",,9,2
+File,"Item.java",,2,0
+File,"Main.java",,11,0
+File,"Product.java",,3,1
+File,"ShoppingCart.java",,4,0
+File,"Store.java",,2,0
+File,"Tarjet.java",,5,3
+File,"Wood.java",,3,3
+File,"Xbox.java",,2,2
+Package,"shopping",,69,32
+Public Enum Type,"shopping.AMenu",1,4,5
+Public Class,"shopping.Apple",3,4,1
+Public Enum Type,"shopping.CMenu",1,4,7
+Public Class,"shopping.Cart",1,5,2
+Public Class,"shopping.Console",3,2,1
+Public Class,"shopping.Customer",1,3,2
+Public Class,"shopping.Electronic",2,2,1
+Public Class,"shopping.Food",2,4,2
+Public Class,"shopping.Inventory",1,9,2
+Public Interface,"shopping.Item",0,2,0
+Public Class,"shopping.Main",1,11,0
+Public Class,"shopping.Product",1,3,1
+Public Interface,"shopping.ShoppingCart",0,4,0
+Public Interface,"shopping.Store",0,2,0
+Public Class,"shopping.Tarjet",1,5,3
+Public Class,"shopping.Wood",2,3,3
+Public Class,"shopping.Xbox",4,2,2
