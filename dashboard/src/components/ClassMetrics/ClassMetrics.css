@@ -18,3 +18,23 @@
 		height: auto;
 	}
 }
+
+.stats {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: azure;
+}
+
+.statsHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.statsRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-color: azure;
+}
