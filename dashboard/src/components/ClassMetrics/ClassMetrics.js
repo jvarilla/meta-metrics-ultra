@@ -25,11 +25,15 @@ class ClassMetrics extends Component {
             });
 
             let anc;
+            var ancText = metrics.dit.ancestors.length === 0 ? 
+                                        ("Ancestors: 0") 
+                                        : "Ancestors for " +this.props.classMetrics.className;
             if(metrics.dit.ancestors.length == 0){
               var a = [{name: "Ancestors not found", value: 0.01}]
-               anc = <SimplePieChart title="Ancestors" metricsData={a}/>
+               anc = <SimplePieChart title={ancText} metricsData={a}/>
             }else{
-              anc = <SimplePieChart title="Ancestors" metricsData={ancestors}/>
+                 
+              anc = <SimplePieChart title={ancText} metricsData={ancestors}/>
             }
 
             // wmc
@@ -98,13 +102,6 @@ class ClassMetrics extends Component {
                                     <b><Rating r1={0} r2={4} oneNum={true} num={metrics.dit.value} />&nbsp; Results for DIT</b>
                                     <p>The Depth of inheritance measures the maximum number of steps from the class node to the root of the inheritance. Your value is {metrics.dit.value}.</p>
                                 </div>
-                                {
-                                    this.props.classMetrics.dit.ancestors.length === 0 ? 
-                                        (<h3>{this.props.classMetrics.className}</h3>) 
-                                        : this.props.classMetrics.dit.ancestors.forEach((ancestor) => {
-                                            return (<h3>{ancestor + '↳'}</h3>)
-                                        })
-                                }
                                 {anc}
                              </div>
                             </div>
